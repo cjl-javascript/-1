@@ -225,7 +225,7 @@ nav .cd{
     z-index: 100;
     top:41px;
     left:347px;
-    display: none;
+    /* display: none; */
     
 }
 nav .cd .cd-l{
@@ -242,10 +242,12 @@ nav .cd .cd-l dl{
     
 }
 nav .cd .cd-l dl dt{
-
-font:14px/60px "";
-float: left;
-margin-right: 30px;
+    font:700 14px/60px "";
+    float: left;
+    margin-right: 30px;
+}
+nav .cd .cd-l dl dt a{
+    color:red;
 }
 nav .cd .cd-l dl dd{
     font:12px/5 "";
