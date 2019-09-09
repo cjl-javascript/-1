@@ -3,7 +3,7 @@
     $(".fen").children("dl").removeClass("bc");
 
         $(".fen").children("dl").hover(function(){ 
-            console.log( $("nav").children(".cd"))
+            $(this).addClass("bc")
             $("nav").find(".cd").css({
                 display:"none"
             })

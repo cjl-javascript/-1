@@ -37,12 +37,85 @@ main .reg{
     padding-right: 0;
     
 }
+main .reg .reg-l{
+    
+    border-right:1px dashed #eee;
+    width:631px;
+    height:556px;
+    float: left;
 
+}
+main .reg .reg-l h3{
+    font:20px/38px "";
+}
+main .reg .reg-l .txt{
+    width:251px;
+    height:40px;
+    text-indent: 5px;
+}
+main .reg .reg-l span{
+    font:14px/40px;
+    display:inline-block ;
+    width:100px;
+    text-align: right;
+}
+main .reg .reg-l>div{
+    width:630px;
+    margin-top:20px;
+    height: 55px;
+}
+main .reg .reg-l .dx{
+    position: relative;
+}
+main .reg .reg-l .dx .yzm{
+    display: block;
+    width:70px;
+    height:30px;
+    text-align: center;
+    background: #a6a5a5;
+    position: absolute;
+    left: 368px;
+    top: 6px;
+}
 
+main .reg .reg-l a.zc{
+    display: block;
+    width:250px;
+    height:35px;
+    background: #F62648;
+    font:14px/35px "";
+    color:#fff;
+    text-align: center;
+    margin:20px 0 0 100px;
+}
+main .reg .reg-l .xy{
+    margin:40px 0 0 100px;
+}
+main .reg .reg-l .xy span{
+    display: inline;
+}
+main .reg .reg-l .xy a{
+    color:blue;
+}
+main .reg .reg-r{
+    float: right;
+    padding:40px 20px 0 60px ;
+    font:16px/36px "";
+}
+main .reg .reg-r span{
+    float: left;
+    font-size: 12px;
+}
+main .reg .reg-r a{
+    float: left;
+    display: block;
+    height: 38px;
+    width:90px;
+    
+    text-align: center;
+    background: #eee;
 
-
-
-
+}
 footer{
     height:91px;
     margin-top:20px;

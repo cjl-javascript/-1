@@ -19,7 +19,7 @@
                     <a href="login.html" class="org">登录</a>
                     <i></i>
                 </li>
-                <li><a href="" class="org">注册</a></li>
+                <li><a href="registe.html" class="org">注册</a></li>
             </ul>
             <ul class="top-r">
                 <li>
@@ -56,7 +56,7 @@
                 </div>
                 <ul>
                     <li>热门搜索：</li>
-                    <li><a href="#" class="org"> 框架眼镜</a></li>
+                    <li><a href="" class="org"> 框架眼镜</a></li>
                     <li><a href="#" class="org"> 太阳眼镜</a></li>
                     <li><a href="#" class="org"> 眼镜片</a></li>
                     <li><a href="#" class="org"> OJO</a></li>
@@ -83,7 +83,7 @@
                 </a>
             </div>
             <div class="fen">
-                <dl class="bc">
+                <dl >
                     <dt>
                         <i class="i1"></i>
                         <a href="" class="org">框架眼镜</a>
@@ -150,10 +150,10 @@
             </div>
             <ul>
                 <li><a href="" class="active">首页</a> </li>
-                <li><a href="">框架眼镜</a> </li>
+                <li><a href="list.html">框架眼镜</a> </li>
                 <li><a href="">太阳镜</a> </li>
                 <li><a href="">眼镜片</a> </li>
-                <li><a href="">近视太阳镜</a> </li>
+                <li class="li4"><a href="">近视太阳镜</a> <img src="images/new4.gif" alt=""> </li>
             </ul>
             <div class="n-r">
                 <a href="" class="org">返现免单</a>
@@ -241,8 +241,8 @@
                         </dd>
                     </dl>
                 </div>
-            
-            
+
+
                 <div class="cd-r">
                     <p>推荐品牌</p>
                     <div class="pinp">
@@ -251,7 +251,7 @@
                     <p>促销活动</p>
                 </div>
             </div>
-                <div class="cd">
+            <div class="cd">
 
                 <div class="cd-l">
                     <dl>
@@ -414,10 +414,10 @@
                         <dd>
                             <span>|</span><a href="" class="org">男士老花镜  |</a>
                             <span>|</span><a href="" class="org"> 女士老花镜 </a>
-                          
+
                         </dd>
                     </dl>
-                   
+
                     <dl>
                         <dt>
                             <a href="" class="org">运动镜</a>
@@ -440,18 +440,18 @@
                             <span>|</span><a href="" class="org">镜盒/镜布</a>
                         </dd>
                     </dl>
-                   
+
                 </div>
 
                 <div class="cd-r">
                     <p>推荐品牌</p>
                     <div class="pinp">
-                      
+
                     </div>
                     <p>促销活动</p>
                 </div>
             </div>
-            
+
         </div>
     </nav>
     <div id="banner">
@@ -599,9 +599,9 @@
             <div class="f2 f">
                 <div class="f2-l f-l">
                     <h3>太阳镜</h3>
-                    <img src="images/t6.jpg" alt="">
-                    <!-- <img src="images/t9.jpg" alt="">
-                    <img src="images/t10.jpg" alt=""> -->
+                    <img src="images/t6.jpg" alt="" class="img">
+                    <img src="images/t9.jpg" alt="" class="img">
+                    <img src="images/t10.jpg" alt="" class="img">
                     <h4>HOT热销商品排行</h4>
                     <ul>
                         <li><a href="" class="org">欧杰欧OJO 新款女士偏光太阳镜 时</a> </li>
@@ -862,10 +862,18 @@
         items: $("#banner").find("img"),
         list: true,
         autoPlay: true,
-        moveTime: 200,
+        moveTime: 1000,
         delayTime: 2000,
         index: 0,
     });
+    // $(".f2-l").banner({
+    //     items: $(".f2-l").find(".img"),
+    //     list: true,
+    //     autoPlay: true,
+    //     moveTime: 1000,
+    //     delayTime: 2000,
+    //     index: 0,
+    // });
 
 </script>
 

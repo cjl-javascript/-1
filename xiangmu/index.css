@@ -311,6 +311,15 @@ nav ul li{
     float: left;
     margin:0 24px;
 }
+nav ul li.li4{
+    position: relative;
+}
+nav ul li img{
+   
+    position: absolute;
+    left: 68px;
+    top: -7px;
+}
 nav ul li a{
     font:700 16px/36px "";
     color:#565453;
@@ -500,8 +509,10 @@ main .f{
 main .f .f-l{
     width:230px;
     float: left;
-    /* position: relative;
-    overflow: hidden; */
+    position: relative;
+    overflow: hidden;
+    height:565px;
+    
 }
 main .f .f-l h3{
     font:20px/64px "";
@@ -521,8 +532,9 @@ main .f .f-l img{
     display: block;
     width:230px;
     height:250px;
-    /* position: absolute;
-    left:230px; */
+    position: absolute;
+    /* left:230px; */
+    top:64px;
 }
 main .f .f-l h4{
     height:54px;
@@ -532,12 +544,15 @@ main .f .f-l h4{
     border-bottom: 1px solid #ccc;
     text-align: center;
     margin: 0 auto;
+    position: absolute;
+    top:314px;
 }
 main .f .f-l ul{
     width:220px;
     margin:0 auto;
     height:198px;
-    
+    position: absolute;
+    top:364px;
 }
 main .f .f-l ul li{
     font:14px/38px "";

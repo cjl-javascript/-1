@@ -18,13 +18,13 @@
             obj.ul = $("<ul>").html(str);
             this.append(obj.ul);
             obj.ul.css({
-                width: "100px",
-                height: 20,               
+                width: "10%",
+                height: "5%",               
                 position: "absolute",
                 left: "50%",
-                bottom:"25px",               
+                bottom:"5%",               
                 display: "flex",
-                marginLeft: "-50px",
+                margin: "0 auto",
                 padding: 0,
 
             })
@@ -33,9 +33,9 @@
                 listStyle: "none",
                 borderRadius:"50%",
                 background:"#eee",
-                width:"20px",
-                height:"20px",
-                marginRight:"10px"
+                width:"15%",
+                height:"100%",
+                marginRight:"7%"
                 
                
             }).eq(index).css({
