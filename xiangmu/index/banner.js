@@ -24,7 +24,7 @@
                 left: "50%",
                 bottom:"5%",               
                 display: "flex",
-                margin: "0 auto",
+                marginLeft: "-5%",
                 padding: 0,
 
             })

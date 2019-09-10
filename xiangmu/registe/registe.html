@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="public.css">
+    <link rel="stylesheet" href="../public.css">
     <link rel="stylesheet" href="registe.css">
 </head>
 
 <body>
     <header>
         <div class="margin">
-            <a href=""><img src="images/logo.png" alt=""></a>
+            <a href=""><img src="../images/logo.png" alt=""></a>
             <span>欢迎注册</span>
 
         </div>
@@ -24,17 +24,18 @@
             <div class="reg">
                <div class="reg-l">
                 <h3>注册新用户</h3>
+                <form>
                 <div class="user">
                     <span>帐户名：</span>
-                    <input type="text" name="" class="txt">
+                    <input type="text" name="user" class="txt" required=true>
                 </div>
                 <div class="pass1">
                     <span>设置密码：</span>
-                    <input type="text" name="" class="txt">
+                    <input type="text" name="pass" class="txt">
                 </div>
                 <div class="pass2">
                     <span>确认密码：</span>
-                    <input type="text" name="" class="txt">
+                    <input type="text" name="pass" class="txt">
                 </div>
                 <div class="phone">
                     <span>手机：</span>
@@ -59,6 +60,7 @@
                     <span>已经有帐号？请直接登录</span>
                     <a href="">登&nbsp;&nbsp;录</a>
                </div>
+            </form>
             </div>
         </div>
 
@@ -84,5 +86,13 @@
         </footer>
         
 </body>
+<script src="jquery.validate.js"></script>
+<script src="jquery.validate.messages_zh.js"></script>
+<!-- <script src="registe.js"></script> -->
+<script>
 
+$(function () {
+        $("form").validate();
+    })
+</script>
 </html>

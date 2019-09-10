@@ -172,26 +172,26 @@ nav .fen dl dt i{
 }
 
 nav .fen dl dt i.i1{   
-    background: url(images/zh.png) no-repeat ; 
+    background: url(../images/zh.png) no-repeat ; 
     background-position: 0 0;    
     width:30px;
     height:10px;  
 }
 nav .fen dl dt i.i2{  
-    background: url(images/zh.png) no-repeat ; 
+    background: url(../images/zh.png) no-repeat ; 
     background-position: 0 -10px;    
     width:30px;
     height:13px;
     
 }
 nav .fen dl dt i.i3{   
-    background: url(images/zh.png) no-repeat ; 
+    background: url(../images/zh.png) no-repeat ; 
     background-position: 0 -23px;  
     width:18px;
     height:19px;  
 }
 nav .fen dl dt i.i4{   
-    background: url(images/zh.png) no-repeat ; 
+    background: url(../images/zh.png) no-repeat ; 
     background-position: 0 -42px;  
     width:30px;
     height:12px;  
@@ -464,7 +464,7 @@ main .huiyuan .h-r p b em{
 main .huiyuan .h-r p span{
     font:12px/32px "";
     color:#fff;
-    background:url(images/t2.png) no-repeat 0 10px;
+    background:url(../images/t2.png) no-repeat 0 10px;
     float: left;
     display: block;
     width:76px;
@@ -519,21 +519,21 @@ main .f .f-l h3{
     color:#fff;
     width:230px;
     height:64px;
-    background: #dab1a8 url(images/f1.png) no-repeat 16px 8px;
+    background: #dab1a8 url(../images/f1.png) no-repeat 16px 8px;
     text-indent: 120px;
 }
 main .f2 .f2-l h3{
-    background: #f87798 url(images/f2.png) no-repeat 16px 8px;
+    background: #f87798 url(../images/f2.png) no-repeat 16px 8px;
 }
 main .f3 .f3-l h3{
-    background: #498bad url(images/f3.png) no-repeat 16px 8px;
+    background: #498bad url(../images/f3.png) no-repeat 16px 8px;
 }
 main .f .f-l img{
     display: block;
     width:230px;
     height:250px;
     position: absolute;
-    /* left:230px; */
+    left:230px;
     top:64px;
 }
 main .f .f-l h4{
@@ -812,4 +812,7 @@ footer p a{
     font:20px/2 "";
     color:#000;
     margin-top:10px;
+}
+.floor p.active,h3.active{
+    background:orange;
 }
