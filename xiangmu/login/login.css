@@ -44,7 +44,7 @@ header span{
     float: right;
 }
 
-.login .txt,.pass{
+.login .user,.pass{
     width:264px;
     height:38px;
     margin:10px 0;
@@ -96,15 +96,24 @@ header span{
     padding: 10px 0 10px 40px;
     float: left;
 }
-.login .yz span{
+/* .login .yz span{
     display: block;
     width:70px;
     height: 30px;
     background:#a6a5a5;
     float: left;
     margin:5px 0 0 5px;
+} */
+#idcode{
+    display: block;
+    width:70px;
+    height: 30px;
+    background:#eee;
+    float: left;
+    margin:5px 0 0 5px;
+    font:14px/30px "";
+    text-align: center;
 }
-
 .login .zidong{
     width:304px;
     height:38px;
@@ -123,7 +132,7 @@ header span{
     float: right;
     margin:10px 0;
 }
-.login .log{
+.login .btn{
     display: block;
     width:300px;
     height:35px;
@@ -131,8 +140,8 @@ header span{
     font:14px/35px "";
     color: #FFF;
     background: #E31939;
-   
-    margin-bottom: 30px;
+   border:0;
+    margin-bottom:30px;
 }
 .login ul{
     width:304px;

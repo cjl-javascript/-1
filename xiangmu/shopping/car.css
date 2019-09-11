@@ -67,9 +67,15 @@ header i{
 
 table{
     width:980px;
-    margin:0 auto;
-    margin-bottom:10px;
+    margin:10px auto;
+    
     border:1px solid #000;
+}
+.car h2{
+    font:30px/40px "";
+}
+.car h2 a{
+    color:orange;
 }
 .car tbody{
     background:#fefef4;
@@ -105,10 +111,25 @@ table{
     color:red;
     cursor: pointer;
 }
-
-
-
-
+.car .box {
+    width:980px;
+    height:30px;
+    margin:10px auto;
+    border:1px solid #000;
+    font:700 16px/30px "";
+}
+.box span{
+    float: left;
+    margin-right:5px;
+}
+.box input{
+    float:left;
+    margin-top:8px;
+}
+.box b{
+    font:700 16px/30px "";
+    float:right;
+}
 #kefu{
     height:191px;
     background:#f3f3f3;

@@ -4,20 +4,50 @@
         constructor() {
             this.url = "http://localhost/xiangmu/shopping/list.json";
             this.tbody = document.querySelector("tbody");
-        
-            this.load();
-    
-            this.addEvent();
-
+            this.check=document.querySelector(".check")
+            var that=this;
+             this.load(function(){
+                that.getLocal()
+                that.addEvent();
+                that.checkAll();
+            });
+            
+            
         }
-        load() {
+        checkAll(){
+            
+            var that=this;
+            this.cbk=document.querySelectorAll(".ckb")
+            console.log(this.cbk)
+            this.check.onclick=function(){
+                if(this.checked){
+                    for(var i=0;i<that.cbk.length;i++){
+                        that.cbk[i].checked="checked"                        
+                    }
+                }else{
+                    for(var j=0;j<that.cbk.length;j++){
+                        that.cbk[j].checked=""                        
+                    }
+                }
+            }
+            for(var i=0;i<that.cbk.length;i++){
+                that.cbk[i].onclick=function(){
+                    if(!this.checked){
+                        that.check.checked="";
+                }
+                    
+                
+            }
+            }
+        }
+        load(callback) {
             var that = this
             ajax({
                 url: this.url,
                 success: function (res) {
-                    that.res = JSON.parse(res)
-                   
-                    that.getLocal()
+                    that.res = JSON.parse(res)                 
+                    
+                    callback()
                 }
             })
         }
@@ -36,7 +66,7 @@
                     if (this.res[i].goodsId == this.goods[j].id) {
                         //console.log(this.res[i], this.goods[j].num)
                         str += `<tr index="${this.res[i].goodsId}">
-                <td ><input type="checkbox"> </td>      
+                <td ><input type="checkbox" class="ckb"> </td>      
                 <td > <img src="${this.res[i].url}"></td>
                 <td >${this.res[i].name}</td>
                 <td >${this.res[i].price}</td>

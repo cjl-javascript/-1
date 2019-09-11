@@ -222,8 +222,9 @@ nav .n-r a{
     height:30px;
     background: #eee;
     font:20px/1.5 "";
-    margin:5px auto;
+    margin:5px 10px;
     cursor: pointer;
+    float: left;
 }
 
 
@@ -354,4 +355,44 @@ footer p{
 }
 footer p a{
     color:#868584;
+}
+
+
+
+
+.pagWarp{
+    height: 40px;
+    box-shadow: 0 2px 5px #b6b6b6;
+    position: absolute;
+    border-radius: 2px;
+    right: 42%;
+    top:500px;
+}
+#btnL,#btnR{
+    line-height: 40px;
+    cursor: pointer;
+}
+#btnL{
+    float: left;
+}
+#btnR{
+    float: right;             
+}
+.pagWarp ul{        
+    height: 40px;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.pagWarp ul li{
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    padding: 0 4px;
+}
+.active{
+    color: blue;
+    font-size:26px;
 }

@@ -24,19 +24,19 @@
             <div class="login">
                 <h3>
                     用户登录
-                    <a href="" class="org">立即注册></a>
+                    <a href="../registe/registe.html" class="org">立即注册></a>
                 </h3>
-                <i class="i5"></i> <input type="text" class="txt" placeholder="手机号/用户名/邮箱">
+                <i class="i5"></i> <input type="text" class="user" placeholder="手机号/用户名/邮箱">
                 <i class="i6"></i> <input type="password" name="" class="pass" placeholder="密码">
                 <div class="yz">
                     <i class="i7"></i> <input type="text" name="" class="yzm">
-                    <span></span>
+                    <span id="idcode"></span>
                 </div>
                 <div class="zidong">
                     <input type="checkbox" name="" class="ckb"><span>自动登录</span>
                     <a href="" class="org">手机短信找回密码？</a>
                 </div>
-                <a href="" class="log">立即登录</a>
+                <input type="button" class="btn" value="登录">
                 <ul>
                     <li><i class="i1"></i><a href="" class="org"><img src="" alt="">微信</a></li>
                     <li><i class="i2"></i><a href="" class="org"><img src="" alt="">QQ</a></li>
@@ -66,5 +66,10 @@
 
     </footer>
 </body>
-
+<script src="../jquery.js"></script>
+<script src="../jquery.idcode.js"></script>
+<script src="login.js"></script>
+<script>
+ $.idcode.setCode();
+</script>
 </html>

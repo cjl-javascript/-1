@@ -24,43 +24,51 @@
             <div class="reg">
                <div class="reg-l">
                 <h3>注册新用户</h3>
-                <form>
+                
                 <div class="user">
                     <span>帐户名：</span>
-                    <input type="text" name="user" class="txt" required=true>
+                    <input type="text" name="user" class="txt_user txt" placeholder="4-8位用户名" >
+                    <span class="tip_user tip"></span>
                 </div>
                 <div class="pass1">
                     <span>设置密码：</span>
-                    <input type="text" name="pass" class="txt">
+                    <input type="password" name="pass1" class="txt_pass1 txt" placeholder="6-16位密码" >
+                    <span class="tip_pass1 tip"></span>
                 </div>
                 <div class="pass2">
                     <span>确认密码：</span>
-                    <input type="text" name="pass" class="txt">
+                    <input type="password" name="pass2" class="txt_pass2 txt" placeholder="确认密码">
+                    <span class="tip_pass2 tip"></span>
                 </div>
                 <div class="phone">
                     <span>手机：</span>
-                    <input type="text" name="" class="txt">
+                    <input type="text" name="" class="txt_phone txt" placeholder="手机号">
+                    <span class="tip_phone tip"></span>
                 </div>
                 <div class="yz">
                     <span>验证码：</span>
-                    <input type="text" name="" class="txt">
+                    <input type="text" id ="Txtidcode" class ="txtVerification txt_yz">
+                    <span id="idcode"></span>
+                    <span class="tip_yz tip" ></span>
                 </div>
                 <div class="dx">
                     <span>短信验证码：</span>
                     <input type="text" name="" class="txt">
-                    <a href="" class="yzm"></a>
+                    
                 </div>
+                <p class="alt"></p>
                 <div class="xy">
                     <input type="checkbox" name="" class="">
                     <span>我已看过并接受《<a href="">用户协议</a>》</span>                
                 </div>
-                <a href="" class="zc">注册</a>
+                <input type="button" name="" class="btn" value="注册">
                </div>
+               
                <div class="reg-r">
                     <span>已经有帐号？请直接登录</span>
-                    <a href="">登&nbsp;&nbsp;录</a>
+                    <a href="../login/login.html">登&nbsp;&nbsp;录</a>
                </div>
-            </form>
+            
             </div>
         </div>
 
@@ -86,13 +94,12 @@
         </footer>
         
 </body>
-<script src="jquery.validate.js"></script>
-<script src="jquery.validate.messages_zh.js"></script>
-<!-- <script src="registe.js"></script> -->
+<script src="../jquery.js"></script>
+<script src="registe.js"></script>
+<script src="../jquery.idcode.js"></script>
 <script>
-
-$(function () {
-        $("form").validate();
-    })
+    $.idcode.setCode();
+    var IsBy = $.idcode.validateCode() 
+    console.log($("#idcode").children()[0].childNodes) 
 </script>
 </html>

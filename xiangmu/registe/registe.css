@@ -25,6 +25,7 @@ header span{
 main{
     height:792px;
 }
+
 main .reg{
     width: 980px;
     height:647px;
@@ -54,42 +55,71 @@ main .reg .reg-l .txt{
     text-indent: 5px;
 }
 main .reg .reg-l span{
-    font:14px/40px;
+    font:14px/40px "";
     display:inline-block ;
     width:100px;
     text-align: right;
+}
+main .reg .reg-l .tip{
+    font:14px/40px "";
+    text-align:center ;
 }
 main .reg .reg-l>div{
     width:630px;
     margin-top:20px;
     height: 55px;
 }
-main .reg .reg-l .dx{
+
+main .reg .reg-l .yz{
     position: relative;
 }
-main .reg .reg-l .dx .yzm{
+main .reg .reg-l .yz input{
+    width:165px;
+    
+}
+main .reg .reg-l .yz .yzm{
     display: block;
     width:70px;
     height:30px;
     text-align: center;
     background: #a6a5a5;
     position: absolute;
-    left: 368px;
+    left: 290px;
     top: 6px;
 }
-
-main .reg .reg-l a.zc{
-    display: block;
+main .btn{
     width:250px;
     height:35px;
-    background: #F62648;
     font:14px/35px "";
-    color:#fff;
-    text-align: center;
-    margin:20px 0 0 100px;
+    color:white;
+    background:#F62648;
+    border:0;
+    margin-left:100px;
 }
+
+main .yz span{
+    float: left;
+}
+main .yz .txt_yz{
+    float: left;
+    margin-left:5px;
+    height:40px;
+}
+#idcode{
+    float: left;
+    height: 42px;
+    width:60px;
+    background: #d7d7d7;
+    text-align: center;
+    margin-left: 10px;
+}
+main .reg .reg-l p{
+    font:20px/26px "";
+    color:#0f0;
+    text-align: center;
+}   
 main .reg .reg-l .xy{
-    margin:40px 0 0 100px;
+    margin:10px 0 0 100px;
 }
 main .reg .reg-l .xy span{
     display: inline;
@@ -114,8 +144,8 @@ main .reg .reg-r a{
     
     text-align: center;
     background: #eee;
-
 }
+
 footer{
     height:91px;
     margin-top:20px;

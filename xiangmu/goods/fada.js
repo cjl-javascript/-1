@@ -4,7 +4,7 @@
         var oSmall = document.querySelector('.big');
         var oMove = document.querySelector('.move');
         var oBig = document.getElementById('big');
-        var oLook_big = document.getElementById('look_big');
+        var oLook_big = document.querySelector('.look_big');
     
         oSmall.onmouseover = function () {
             oMove.style.display = "block";
@@ -16,8 +16,8 @@
         }
         oSmall.onmousemove = function (eve) {
            var  e = eve || window.event;
-            var x = e.clientX;
-            var y = e.clientY;
+            var x = e.pageX;
+            var y = e.pageY;
             //console.log(x, y)
             var oMoveLeft = x - oSmall.offsetLeft - oMove.offsetWidth / 2;
             var oMoveTop = y - oSmall.offsetTop - oMove.offsetHeight / 2;

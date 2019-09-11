@@ -212,6 +212,10 @@ main .left .small{
     border:1px solid #eee;
     margin-top:10px;
 }
+main .left .small img{
+    width:59px;
+    height:59px;
+}
 main .left .move{
     width: 220px;
     height: 220px;
@@ -230,7 +234,7 @@ main .left .move{
     display: none;
     position: absolute;
 }
-#look_big {
+.look_big {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -268,8 +272,34 @@ main .name{
     font:700 16px/1.5 "";
     
 }
+main .sold{
+    height:85px;
+    width:450px;
+    margin-top:20px;
+}
+main .sold ul{
+    height:85px;
+    width:450px; 
+    border-bottom:1px dashed #ccc;
+    
+}
+main ul li{
+float: left;
+width:140px;
+text-align: center;
+}
+main ul li p{
+    font:18px/2 "";
+}
+main ul li h3{
+    font:12px/2 "";
+}
+main ul li:nth-child(2){
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+}
 main .r-b{
-    margin-top:100px;
+    margin-top:60px;
 }
 .r-b input{
     width:60px;

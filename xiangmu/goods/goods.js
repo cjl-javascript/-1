@@ -7,6 +7,10 @@
             //console.log(this.id)
         this.url="http://localhost/xiangmu/goods/goods.json";
         this.box = document.querySelector("main");
+        this.small=document.querySelector(".small");
+        this.bbig=document.querySelector(".bbig");
+        this.look_big=document.querySelector(".look_big");
+        this.r_t=document.querySelector(".r_t");
         this.load();
     }
     load(){
@@ -21,44 +25,25 @@
        
     }
     display(){
-        console.log(this.res)
-            var str = "";
+
+        //console.log(this.res)
+            var str1 = "";
+            var str2 = "";
             for (var i = 0; i < this.res.length; i++) {
                 if(this.res[i].goodsId==this.id){
-                    str += `<div class="margin">
-                    <div class="left">
-                        <div class="big">
-                                <img src="${this.res[i].url}" alt="" >
-                                <p class="move"></p>
-                        </div>              
-                        <img src="${this.res[i].url}" alt="" class="small">
-                    </div>
-                    <div id="big">
-                            <img src="${this.res[i].url}" id="look_big" />
-                    </div>
-                    <div class="right">
-                        <p class="name">${this.res[i].name}</p>
-                        <div class="r-c">
-        
-                            <span>本店价</span>
-                            <p class="price1">¥${this.res[i].price}</p>
-                            <span>市场价</span> <del>¥${this.res[i].price2}</del>
-                        </div>
-                        <div class="r-b">
-                            <span>数量</span>
-                            <input type="number" name="" id="">
-                            <span>件</span>
-                        </div>
-                        <div class="buy">
-                            <a href="" class="al">单买镜框</a>
-                            <a href="" class="ar">配上镜片</a>
-                        </div>
-                    </div>
-                </div>`
-                }
-                
+                    str1 += `<img src="${this.res[i].url}" alt="" >`;
+                    this.bbig.src=`${this.res[i].url}`;
+                    this.look_big.src=`${this.res[i].url}`;
+                    str2 +=`<p class="name">${this.res[i].name}</p>
+                    <div class="r-c">
+                        <span>本店价</span>
+                        <p class="price1">¥${this.res[i].price}</p>
+                        <span>市场价</span> <del>¥${this.res[i].price2}</del>
+                    </div>`
+                }                
             }
-            this.box.innerHTML = str;
+            this.small.innerHTML = str1;
+            this.r_t.innerHTML=str2;
     }
 }
     new Goods();
