@@ -365,7 +365,7 @@ footer p a{
     box-shadow: 0 2px 5px #b6b6b6;
     position: absolute;
     border-radius: 2px;
-    right: 42%;
+    right: 45%;
     top:500px;
 }
 #btnL,#btnR{
@@ -393,6 +393,7 @@ footer p a{
     padding: 0 4px;
 }
 .active{
-    color: blue;
+    color: #e31939;;
     font-size:26px;
+    font-weight:700;
 }

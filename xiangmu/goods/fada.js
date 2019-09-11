@@ -39,6 +39,7 @@
             oMove.style.left = oMoveLeft + 'px';
             oMove.style.top = oMoveTop + 'px';
             oBig.style.left=oSmall.offsetWidth+oSmall.offsetLeft+'px';
+            //反向移动
             oLook_big.style.left=oMoveLeft/maxLeft*(oBig.clientWidth-oLook_big.clientWidth)+'px';
             oLook_big.style.top=oMoveTop/maxTop*(oBig.clientHeight-oLook_big.clientHeight)+'px';
         }

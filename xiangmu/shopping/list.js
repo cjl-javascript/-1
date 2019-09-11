@@ -8,12 +8,12 @@
             this.right = document.getElementById("btnR");
             this.ul = document.querySelector(".pagWarp ul");
             this.left = document.getElementById("btnL");
-            console.log(this.left)
+            // console.log(this.left)
             this.url = "http://localhost/xiangmu/shopping/list.json";
             this.box = document.querySelector(".box");
             this.load();
             this.addEvent();
-            this.addEvent1();   
+            this.addEvent1();
         }
         load() {
             var that = this;
@@ -52,31 +52,32 @@
                     <span>¥${this.res[i].price}</span>
                     <p>${this.res[i].name}</p>  
                     <a href="http://localhost/xiangmu/goods/goods.html?${this.res[i].goodsId}"><i>查看详情</i></a>             
-                    <a href=""><i class="btn">加入购物车</i></a>
+                    <i class="btn">加入购物车</i>
                     
                 </li>`
 
                 }
             }
+
             this.box.innerHTML = str1;
         }
-        addEvent1(){
-           // console.log(this.left)
-            var that=this;
-            this.left.onclick=function(){
-                if(that.index==0){
-                    that.index=that.maxNum-1;
-                }else{
+        addEvent1() {
+            // console.log(this.left)
+            var that = this;
+            this.left.onclick = function () {
+                if (that.index == 0) {
+                    that.index = that.maxNum - 1;
+                } else {
                     that.index--;
                 }
                 that.setActive();
                 //根据最新的index，重新渲染页面
                 that.display();
             };
-            this.right.onclick=function(){
-                if(that.index==that.maxNum-1){
-                    that.index=0
-                }else{
+            this.right.onclick = function () {
+                if (that.index == that.maxNum - 1) {
+                    that.index = 0
+                } else {
                     that.index++;
                 }
                 that.setActive();

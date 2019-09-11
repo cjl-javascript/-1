@@ -34,7 +34,7 @@
                 borderRadius:"50%",
                 background:"#eee",
                 width:"15%",
-                height:"100%",
+                height:"74%",
                 marginRight:"7%"
                 
                

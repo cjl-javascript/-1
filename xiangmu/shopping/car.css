@@ -73,6 +73,7 @@ table{
 }
 .car h2{
     font:30px/40px "";
+    
 }
 .car h2 a{
     color:orange;
@@ -103,9 +104,17 @@ table{
 }
 .car .td5{
     width:120px;
+    
 }
+.car .num{
+    font:16px/24px "";
+    height:30px;
+    text-align: center;
+}
+
 .car .count{
     width:120px;
+    font:16px/24px "";
 }
 .car .delete{
     color:red;

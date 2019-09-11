@@ -1,43 +1,39 @@
-;(function(){
+; (function () {
     "use strict";
-    class Car{
+    class Car {
         constructor() {
             this.url = "http://localhost/xiangmu/shopping/list.json";
             this.tbody = document.querySelector("tbody");
-            this.check=document.querySelector(".check")
-            var that=this;
-             this.load(function(){
+            this.check = document.querySelector(".check");
+            var that = this;
+            this.load(function () {
                 that.getLocal()
                 that.addEvent();
                 that.checkAll();
             });
-            
-            
         }
-        checkAll(){
-            
-            var that=this;
-            this.cbk=document.querySelectorAll(".ckb")
-            console.log(this.cbk)
-            this.check.onclick=function(){
-                if(this.checked){
-                    for(var i=0;i<that.cbk.length;i++){
-                        that.cbk[i].checked="checked"                        
+        //全选
+        checkAll() {
+            var that = this;
+            this.cbk = document.querySelectorAll(".ckb")
+            //console.log(this.cbk)
+            this.check.onclick = function () {
+                if (this.checked) {
+                    for (var i = 0; i < that.cbk.length; i++) {
+                        that.cbk[i].checked = "checked"
                     }
-                }else{
-                    for(var j=0;j<that.cbk.length;j++){
-                        that.cbk[j].checked=""                        
+                } else {
+                    for (var j = 0; j < that.cbk.length; j++) {
+                        that.cbk[j].checked = ""
                     }
                 }
             }
-            for(var i=0;i<that.cbk.length;i++){
-                that.cbk[i].onclick=function(){
-                    if(!this.checked){
-                        that.check.checked="";
+            for (var i = 0; i < that.cbk.length; i++) {
+                that.cbk[i].onclick = function () {
+                    if (!this.checked) {
+                        that.check.checked = "";
+                    }
                 }
-                    
-                
-            }
             }
         }
         load(callback) {
@@ -45,16 +41,13 @@
             ajax({
                 url: this.url,
                 success: function (res) {
-                    that.res = JSON.parse(res)                 
-                    
+                    that.res = JSON.parse(res)
                     callback()
                 }
             })
         }
         getLocal() {
-           
             this.goods = localStorage.getItem("goods") ? JSON.parse(localStorage.getItem("goods")) : [];
-            
             this.display()
         }
         display() {
@@ -70,14 +63,14 @@
                 <td > <img src="${this.res[i].url}"></td>
                 <td >${this.res[i].name}</td>
                 <td >${this.res[i].price}</td>
-                <td ><input type="number" value="${this.goods[j].num}" min=1 class="num"></td>
+                <td ><input type="number" value="${this.goods[j].num}" min=0 class="num"></td>
                 <td class="count">${this.res[i].price * this.goods[j].num}</td>
                 <td class="delete">删除</td>
             </tr>`
                     }
                 }
             }
-            //填充
+            //填充到表格
             this.tbody.innerHTML = str;
         }
 
@@ -109,11 +102,13 @@
                     that.setLocal(function (i) {
                         //修改
                         that.goods[i].num = that.val
+                        
                     })
+                    that.display()
                 }
             })
+           
         }
-
         setLocal(fn) {
             //遍历localstorage的数据
             for (var i = 0; i < this.goods.length; i++) {
@@ -125,13 +120,6 @@
             }
             localStorage.setItem("goods", JSON.stringify(this.goods));
         }
-
-
-
-
-
-
-
     }
     new Car();
 })();

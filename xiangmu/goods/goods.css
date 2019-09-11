@@ -198,12 +198,12 @@ main .left{
 }
 main .left .big{
     position: relative;
-    
+    /* border:2px solid #eee; */
 }
 main .left  .big img{
     width:440px;
     height:440px;
-    /* border:1px solid #eee; */
+    
     
 }
 main .left .small{
@@ -222,7 +222,7 @@ main .left .move{
     position: absolute;
     top: 0px;
     left: 0px;
-    background: black;
+    background: white;
     display: none;
     opacity: 0.4;
     margin: 0;
@@ -242,7 +242,7 @@ main .left .move{
     height: 1000px;
 }
 main .right{
-    margin:36px 0 0 20px;
+    margin:36px 0 0 30px;
     float: left;
 }
 main .right .r-c{
@@ -310,23 +310,22 @@ main .buy{
     height:45px;
     margin-top:30px;
 }
-
-.buy a{
+.buy i{
     display: block;
     width:180px;
     height:40px;
     float: left;
     margin-left:30px ;
     border:1px solid #FF0036;
-    
+    cursor: pointer;
     font:16px/40px "";
     text-align: center;
 }
-.buy a.al{
+.buy i.al{
     color:#FF0036;
     background: pink;
 }
-.buy a.ar{
+.buy i.ar{
     color:#fff;
     background:#FF0036;
 }

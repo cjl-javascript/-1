@@ -1,32 +1,22 @@
 ;(function(){
     "use strict";
-    $(".fen").children("dl").removeClass("bc");
+    $(".fen").children(".num").children(".dl").removeClass("bc");
 
-        // $(".fen").children("dl").hover(function(){ 
-        //     $(this).addClass("bc")
-        //     $("nav").find(".cd").css({
-        //         display:"block"
-        //     })
-        //   $("nav").find(".cd").eq($(this).index()).css({
-        //     display:"none"               
-        // }) }        
-        // ,function(){
+        $(".fen").children(".num").hover(function(){ 
+            $(this).children(".dl").addClass("bc")
+            $(this).find(".cd").css({
+                display:"block"
+            })
+      
+   }        
+        ,function(){
             
-        //     $(".fen").children("dl").removeClass("bc")
-        //     $("nav").find(".cd").css({
-        //         display:"none"
-        //     })
-        // }) 
+            $(".fen").children(".num").children(".dl").removeClass("bc")
+            $(this).find(".cd").css({
+                display:"none"
+            })
+        }) 
  
-     $(".fen").children("dl").on("mouseover",function(){
-        $(this).addClass("bc");
-        $("nav").find(".cd").css({
-            display:"block" ,
-         })
-        
-         $("nav").find(".cd").eq($(this).index()).css({
-                display:"none"               
-             }) 
-     } )      
+   
      
 })();
