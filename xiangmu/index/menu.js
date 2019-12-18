@@ -15,7 +15,8 @@
             $(this).find(".cd").css({
                 display:"none"
             })
-        }) 
+         }
+         ) 
  
    
      
