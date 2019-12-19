@@ -1,0 +1,109 @@
+﻿$set(citycode=cmd.QueryString("id","shanghai"))
+$set(parentid=cmd.QueryString("parentid","shanghai"))
+$set(model=cmd.GetCityModel(citycode))
+$set(cityname=cmd.GetCityName(parentid))
+$set(modelcity=cmd.GetCityModel(parentid))
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>$model.seotitle</title>
+    <meta name="keywords" content="$model.seokeywords" />
+    <meta name="description" content="$model.seodescription" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="inside">
+        <div id="inside_left">
+            <div id="content_1">
+                <div class="column">
+
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="http://www.jiathis.com/share/" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span class="blk12_h22">更多</span></a>
+                    </div>
+                    <script type="text/javascript" src="http://v1.jiathis.com/code/jia.js" rel="nofollow" charset="utf-8"></script>
+                    <script type="text/javascript" src="http://v1.jiathis.com/code/plugin.client.js" charset="utf-8"></script>
+
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>  
+                        <h3 class="left"> <a href="/center/">培训中心</a> &gt;</h3> 
+                        <h3 class="left"> $model.cityname</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                    <span class="red16B">樱花国际日语 $cityname日语培训中心 </span><br>
+                    <span class="blk14_h30">樱花国际日语结合日本尖端语言教育的精华，
+                    凝聚了具有丰富教学经验的日本语言教授专家，为个人和企业实现了极具特色的应用日语口语和商务日语课程，
+                    同时开设了丰富多彩的文化拓展课程、课外活动和日语交友社区。$cityname樱花国际日语等待您的到来。</span> <br><br>
+
+                    <span class="red16B">$cityname中心发展地图</span>　
+                    　<span class="blk14_h30">$model.cityname 电话： $model.telphone</span>　　
+                    <marquee scrollamount="2" width="340" onmouseover="this.stop()" onmouseout="this.start()" style="width: 340px;"> 
+                    <span class="red14_h30">开放时间：周一到周五：9：00-21：00 周六、周日：9：00-19：00</span>
+                    </marquee><br>
+                    <script src="/templates/main/js/bdMap.js"></script>
+                    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=A739765f9a84bee561d30fa0b537ccb9&s=1"></script>
+                    <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=A739765f9a84bee561d30fa0b537ccb9&amp;services=&amp;t=20170823191629&s=1"></script>
+
+                    <div id="map" style="height: 480px; width: 550px; border: 1px solid rgb(188, 188, 188); float: left; overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: url(&quot;http://api0.map.bdimg.com/images/openhand.cur&quot;) 8 8, default;"><div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 550px; height: 480px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" "=" " style=" position absolute; padding 0px; margin 0px; border 0px; cursor pointer; background url(&quot;http />/api0.map.bdimg.com/images/blank.gif&quot;); width: 19px; height: 25px; left: 265px; top: 215px; z-index: -6356382;" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; display: none; cursor: inherit; background-color: rgb(190, 190, 190); border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: -20000; color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 265px; top: 215px; z-index: -6356382;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="http://api0.map.bdimg.com/images/marker_red_sprite.png" style="display: block; border:none;margin-left:0px; margin-top:0px; "></div><label class="BMapLabel" unselectable="on" style="position: absolute; display: inline; cursor: inherit; background-color: red; border: 1px solid rgb(255, 0, 0); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: 80; color: white; -webkit-user-select: none; left: 20px; top: -15px;">樱花国际日语—常州中心</label></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left: 269px; top: 229px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="http://api0.map.bdimg.com/images/marker_red_sprite.png" style="display: block; border:none;margin-left:-19px; margin-top:-13px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left: 275px; top: 240px; display: block; transform: translate3d(0px, 0px, 0px);"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=104329&amp;y=28999&amp;z=19&amp;styles=pl&amp;scaler=1&amp;udt=20170809" style="position: absolute; border: none; width: 256px; height: 256px; left: -110px; top: 12px; max-width: none; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=tile&amp;x=104329&amp;y=29000&amp;z=19&amp;styles=pl&amp;scaler=1&amp;udt=20170809" style="position: absolute; border: none; width: 256px; height: 256px; left: -110px; top: -244px; max-width: none; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=104328&amp;y=29000&amp;z=19&amp;styles=pl&amp;scaler=1&amp;udt=20170809" style="position: absolute; border: none; width: 256px; height: 256px; left: -366px; top: -244px; max-width: none; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=104328&amp;y=28999&amp;z=19&amp;styles=pl&amp;scaler=1&amp;udt=20170809" style="position: absolute; border: none; width: 256px; height: 256px; left: -366px; top: 12px; max-width: none; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=tile&amp;x=104330&amp;y=28999&amp;z=19&amp;styles=pl&amp;scaler=1&amp;udt=20170809" style="position: absolute; border: none; width: 256px; height: 256px; left: 146px; top: 12px; max-width: none; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=tile&amp;x=104330&amp;y=29000&amp;z=19&amp;styles=pl&amp;scaler=1&amp;udt=20170809" style="position: absolute; border: none; width: 256px; height: 256px; left: 146px; top: -244px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: none;"><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: none;"></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 10; display: none;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 3;"></div></div><div class="pano_close" title="退出全景" style="z-index: 1201; display: none;"></div><a class="pano_pc_indoor_exit" title="退出室内景" style="z-index: 1201; display: none;"><span style="float:right;margin-right:12px;">出口</span></a><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 30; text-size-adjust: none; bottom: 20px; right: auto; top: auto; left: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="http://api0.map.bdimg.com/images/copyright_logo.png"></a></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:url(http://api0.map.bdimg.com/images/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorTL" style="cursor: default; white-space: nowrap; color: black; background: none; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: auto; right: auto; top: 2px; left: 5px; position: absolute; z-index: 10; text-size-adjust: none;"><span _cid="1" style="display: none;"><a href="http://www.88148.com" style="font-size:12px;">律法网</a></span></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; color: black; background: none; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 2px; position: absolute; z-index: 10; text-size-adjust: none;"><span _cid="1" style="display: inline;"><span style="background: rgba(255, 255, 255, 0.701961);padding: 0px 1px;line-height: 16px;display: inline;height: 16px;">©&nbsp;2017 Baidu - GS(2016)2089号&nbsp;- Data © 长地万方 &amp; <a target="_blank" href="http://www.palmcity.cn/palmcity/">PalmCity</a></span></span></div></div>
+                    <script type="text/javascript">
+                        ShowMap("map", { city: '$model.cityname', addr: '$model.address', title: '樱花国际日语—$model.cityname', lawfirm: '樱花国际日语', tel: '$model.telphone', mapx: '', pic: '/templates/main/images/ys_logo.gif', ismove: '0', piobj: 'nxp' });
+                    </script>
+                    <br>
+
+                    <span style="float: right;">
+                        <img src="/templates/main/images/shpic2.jpg" alt="$model.cityname" title="$model.cityname">
+                    </span>
+                    <div class="clear"></div>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="load" style="width:100px;height:30px;color:#999;display:none;"></div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>培训中心</span></h3>
+                    <ul></ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+    $load("_footer.html")
+</body>
+</html>

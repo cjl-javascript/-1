@@ -1,0 +1,163 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=17)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>日语学习方法丨日语学习经验——樱花国际日语</title>
+    <meta name="keywords" content="日语学习方法，日语学习经验，樱花国际日语" />
+    <meta name="description" content="日语怎么学？来樱花国际日语培训中心——国内知名日语培训机构，一旦你接触了樱花国际日语多维学习法，你就会知道，我们是多么用心，让您得日语学习如此轻松而有效率。" />
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">当前位置：<a href="/">首页</a> &gt 学习方法</span>
+                </div>
+                <div id="detail">
+                    <p>
+                        <span class="red16B">多维学习法——我们成功的保证</span><br />
+                        <span class="blk14_h30">&emsp;&emsp;一旦你接触了</span><span class="red14_h30">樱花国际日语</span><span class="blk14_h30">多维学习法，你就会知道，我们是多么用心，让您得日语学习如此轻松而有效率。</span>
+                    </p>
+                    <div class="line"></div>
+                    <div id="learn">
+                        <div class="learn_img_1">
+                            <img src="/templates/main/images/a9f79eac-4a89-4921-8e18-1b199952a23a.gif" />
+                        </div>
+                        <span class="red16B">资深著名外教</span><br />
+                        <span class="blk14B">我们的教学有2个关键词 严谨 &amp; 个性化</span><br />
+                        <span class="blk14_h30">
+                            &emsp;&emsp;教师和辅导员，始终是学好一门语言的关键。樱花国际日语在日本及中国，独立运营着一个教师招聘和培训的中心。在樱花国际日语，仅仅有日本语教师资格认定(日本語教師認定書)和教学资格证书(中学校一種免許)是不够的。他们还需要真诚的微笑和细致的耐心，来全力以赴的对待自己的学生。<br />
+                            &emsp;&emsp;在樱花国际日语，您将可以得到日籍教师最多不超过
+                        </span><a href="#" target="_blank"><span class="red14_h30">4人的小班辅导</span></a><span class="blk14_h30">。他们将用各种个性化的授课方式，来教会你最纯正的日语。</span>
+                    </div>
+                    <div class="line"></div>
+                    <div id="learn">
+                        <div class="learn_img">
+                            <img src="/templates/main/images/67a86453-c896-4159-8f2f-51e05492c294.gif" />
+                        </div>
+                        <span class="red16B">应用能力强化</span><br />
+                        <span class="blk14_h30">&emsp;&emsp;在</span><span class="red14_h30">樱花国际日语</span><span class="blk14_h30">
+                            ，我们开设大量的文法、词汇、发音、基础写作等各类日语学习课程。以应对解决您的考级、做题等应用性的问题。这些精心准备而且卓有成效的课程，将会供您自由选择。针对那些学有余力的精英分子，我们更有很多难以想象的惊喜。无论是围绕各类话题而展开的日语角，或者是实现布置的讨论作业，都能让你们充分的融入日语学习中。<br />
+                            &emsp;&emsp;有趣的多媒体在线互动教材，也是我们学习流程中关键的一环。通过与外教课程的配合，您的学习水平可以与自己的水平相适应。
+                        </span>
+                    </div>
+                    <div class="line"></div>
+                    <div id="learn">
+                        <div class="learn_img">
+                            <img src="/templates/main/images/ec7ca7e2-c22e-4a3b-b6b7-4cf4f5ddfa53.gif" />
+                        </div>
+                        <span class="red16B">海外学习和文化体验</span><br />
+                        <span class="blk14_h30">&emsp;&emsp;在东京学习日语，实地接触日本生活。在樱花国际日语，学到一定的基础日语后，我们将安排您去东京，实景了解日本、体验日本文化、学习日语知识，真正做到学以致用，全方位接触日本，锻炼语言能力。</span>
+                    </div>
+                    <div class="line"></div>
+                    <div id="learn">
+                        <div class="learn_img_1">
+                            <img src="/templates/main/images/ce171ba6-872b-4686-8cf7-fa508c7b248e.gif" />
+                        </div>
+                        <span class="red16B">个人学习顾问</span><br />
+                        <span class="blk14_h30">
+                            &emsp;&emsp;在舒适的中心内，您的课程顾问随时记录您的学习进度，并且作出适当的督促和解答。<br />
+                            &emsp;&emsp;在樱花，
+                        </span><span class="red14_h30">每个人都不会落下任何一堂课</span><span class="blk14_h30">，因为所有的时间都是由您自己预约，您可以在樱花任何一个中心的定课台、或者通过电话、电子媒介等，向您个人的</span><span class="red14_h30">专署学习顾问</span><span class="blk14_h30">预约您的课程。课程可以根据您的需求改变时间。如果您没有马上掌握这些内容，没关系,您可以再订!</span>
+                    </div>
+                    <div class="line"></div>
+                    <div id="learn">
+                        <div class="learn_img">
+                            <img src="/templates/main/images/9b044380-c48f-4fc3-92bb-12b092256cf9.gif" />
+                        </div>
+                        <span class="red16B">中教贴身指导</span><br />
+                        <span class="blk14_h30">&emsp;&emsp;在</span><span class="red14_h30">樱花国际日语</span><span class="blk14_h30">
+                            ，除了专业的外籍教员之外，还会有许多同样热情，掌握着扎实日语教学功底的中教。他们将在您的身边，随时解答您的各种疑问，无论是通过面对面交流、电话、还是网络媒介。<br />
+                            &emsp;&emsp;*全程记录学习进度，亲切指导及督促<br />
+                            &emsp;&emsp;*全天候学习咨询、评估、解答<br />
+                            &emsp;&emsp;*愉悦的学习环境
+                        </span>
+                    </div>
+                    <div class="line"></div>
+                    <div id="learn">
+                        <div class="learn_img_1">
+                            <img src="/templates/main/images/ccd4eaf3-1993-4824-88e5-99bfd6e94977.gif" />
+                        </div>
+                        <span class="red16B">樱花会员俱乐部</span><br />
+                        <span class="blk14_h30">&emsp;&emsp;</span><span class="red14_h30">让日语成为你生活的一部分</span><span class="blk14_h30">
+                            ，那无疑是日语教学最顶端的一步。为此，我们让每个樱花的学员，都成为了“樱花会员俱乐部”的成员，丰富的活动，强大的日语学习互动俱乐部，除了日语，还给您更多的帮助。<br />
+                            &emsp;&emsp;每周，你都可以参加我们俱乐部的活动。无论在中心内还是中心外，你都可以在各类活动中，与您的日籍教师和同学一起充分的锻炼日语。
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>$model.title</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

@@ -1,0 +1,193 @@
+﻿$set(id=cmd.QueryString("vid","0"))
+$set(model=cmd.GetModel("20",id.ToString()))
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>$model.seo_title</title>
+    <meta name="keywords" content="日本游学，日本游学机构，日本游学团，樱花国际日语" />
+    <meta name="keywords" content="学习游览两不误，玩耍也能学到知识，一价全包、家长安心。全程樱花日本游学机构老师带队、游览地导游解说，大巴接送更省心。旅游、美食、购物一应俱全，游览的自由时间随心所欲。全程入住日本高星级酒店，学员住宿安全更有保障。" />
+    <link href="/templates/main/css/product.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script language="JavaScript" type="text/JavaScript">
+		function qiehuan(obj) {
+            if ($(obj).attr("selected") != true) {
+                $(".selected").removeClass("selected");
+                $(obj).addClass("selected");
+                if ($(obj).attr("value") == "1") {
+                    $("#lcontent1").show();
+                    $("#lcontent2").hide();
+                }
+                else {
+                    $("#lcontent1").hide();
+                    $("#lcontent2").show();
+                }
+            }
+        }
+        
+    </script>
+
+</head>
+<body>
+  
+
+
+    <div class="line"></div>
+    <div class="crumb-inner">
+        <a href="/" title="首页">首页 &gt;</a>
+        <a href="#">游学行程 &gt;</a>
+        <span id="title">$model.title</span>
+    </div>
+    <div class="pro-title ov">
+        <div class="fl" style="width:10%">
+            <img id="img" src="$model.img_url" class="title_img" />
+        </div>
+        <div class="fl" style="width:80%">
+            <p id="title1" class=" title_zt01">$model.title</p>
+            <span id="infos" class="title_zt02">
+                $cmd.DropHtml(model.fields.gaiyao)
+            </span>
+        </div>
+    </div>
+    <div id="product-banner" style="display:none;">
+        <div id="product-slideBox" class="slideBox">
+            <div class="bd">
+                <ul id="">
+
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            jQuery(".slideBox").slide({ mainCell: ".bd ul", autoPlay: true });
+        </script>
+    </div>
+    <div id="product- presentation" class="ov product-presentation">
+        <div class="pre_left fl">
+            <div class="ov">
+                <div class="pre_icon fl">
+                    <div>
+                        <img src="/templates/main/images/pre_icon.png" />
+                    </div>
+                    <span class="pre_icon_zt">活动概要</span>
+                </div>
+                <div class="pre_zt fr">
+                    <p id="PassingCity">所经城市:&nbsp;&nbsp;&nbsp;&nbsp;   $model.zhaiyao</p>
+                    <p id="endtime">报名截止日期: &nbsp;&nbsp;&nbsp;&nbsp;$model.endTime</p>
+                    <p id="starttime">出发日期:&nbsp;&nbsp;&nbsp;&nbsp;$model.startTime</p>
+                </div>
+            </div>
+            <div class="pro_special">
+                $model.fields.gaiyao
+            </div>
+        </div>
+        <div class="pre_right fr">
+
+            <table border="0" cellspacing="0" cellpadding="0" class="tablestyle">
+                <tbody>
+                    <tr>
+                        <th>姓名：<span class="fn-red">*</span></th>
+                        <td>
+                            <label>
+                                <input name="username"  type="text" class="inputstyle names" id="username" size="20" placeholder="请输入您的姓名" datatype="Require" msg="中文名字不能为空!">
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>联系方式：<span class="fn-red">*</span></th>
+                        <td>
+                            <label>
+                                <input name="mobile" type="text" class="inputstyle mbs" id="mobile" size="20" placeholder="请输入您的手机" datatype="Require" msg="联系方式不能为空!">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>邮箱：<span class="fn-red"></span></th>
+                        <td>
+                            <label>
+                                <input name="email" type="text" class="inputstyle emails" id="email" size="20" placeholder="请输入您常用的邮箱地址" datatype="Require" msg="请输入有效的邮箱地址！" />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>出发城市：<span class="fn-red">*</span></th>
+                        <td>
+                            <select class="inputstyle citys" id="seladdr" name="area">
+                                <option value="0" selected="">选择城市</option>
+
+                                <option>上海</option>
+                                <option>杭州</option>
+                                <option>宁波</option>
+                                <option>苏州</option>
+                                <option>无锡</option>
+                                <option>南京</option>
+                                <option>南通</option>
+                                <option>昆山</option>
+                                <option>扬州</option>
+                                <option>常州</option>
+                                <option>温州</option>
+                                <option>常熟</option>
+
+                                <option>广州</option>
+                                <option>深圳</option>
+                                <option>佛山</option>
+                                <option>福州</option>
+                                <option>厦门</option>
+
+                                <option>北京</option>
+                                <option>天津</option>
+                                <option>大连</option>
+                                <option>青岛</option>
+                                <option>济南</option>
+
+                                <option>重庆</option>
+                                <option>成都</option>
+
+                                <option>西安</option>
+
+                                <option>合肥</option>
+                                <option>武汉</option>
+                                <option>长沙</option>
+
+                                <option>其他</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pro-btnbox">
+                <input type="button" id="btnSubmit1" value="立刻报名" class="pro-button" />
+            </div>
+            <p class="fn-center">☆ 本线路具体价格欢迎来电垂询：4001-800-111</p>
+
+        </div>
+
+    </div>
+    <div id="detail-content" class="layout">
+        <!--  导航开始 -->
+        <div id="info-float">
+            <div class="pt-menu" style="display: block; width: 1198px; height: 42px; background: #e9e9e9">
+                <ul id="maintab">
+                    <li onclick="qiehuan(this)" value="1" class="selected"><a href="javascript:;" rel="lcontent1">行程安排</a></li>
+                    <li onclick="qiehuan(this)" value="2" class=""><a href="javascript:;" rel="lcontent2">往期回顾</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--  导航结束 -->
+        <!-- 行程安排 -->
+
+        <div id="lcontent1" class="tabcontent" style=" width: 1100px; margin: 0 auto;">
+            $model.fields.anpai
+        </div>
+        <div id="lcontent2" class="tabcontent" style="display: none; width: 1100px; margin: 0 auto; margin-bottom: 30px;">
+            $model.fields.wangqi
+        </div>
+    </div>
+</body>
+</html>

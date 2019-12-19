@@ -1,0 +1,53 @@
+﻿
+<div id="nav_main">
+    <div id="nav_left">
+        <ul id="menus">
+            <li class="nLi">
+                <a href="/">樱花首页</a>
+            </li>
+            $set(catelist=cmd.Execute("select id,title,[name] from sk_site_channel where is_lock=0"))
+            $foreach(item in catelist)
+            <li class="nLi">
+                <a href="/${item.name}/" target="_blank">$item.title</a>
+                ${if(cmd.GetChannelChilds(item.id)>0)}
+                <ul class="sub">
+                    $set(navlist=cmd.Execute("select id,call_index,title,link_url,seo_title,seo_keywords,seo_description,is_lock from sk_article_category where channel_id="+item.id))
+                    $foreach(n in navlist)
+                        $if(n.link_url!="")
+                        <li><a href="$n.link_url" target="_blank">$n.title</a></li>
+                        $else
+                            <li><a href="/${n.call_index}/" target="_blank">$n.title</a></li>
+                        $end
+                    $end
+                </ul>
+                ${end}
+            </li>
+            $end
+            <li class="nLi">
+                <a href="https://lx.liuxuejp.com.cn" target="_blank">日本留学</a>
+            </li>
+
+        </ul>
+    </div>
+    <script id="jsID" type="text/javascript">
+
+       jQuery("#menus").slide({
+           type: "menu", // 效果类型，针对菜单/导航而引入的参数（默认slide）
+           titCell: ".nLi", //鼠标触发对象
+           targetCell: ".sub", //titCell里面包含的要显示/消失的对象
+           effect: "slideDown", //targetCell下拉效果
+           delayTime: 300, //效果时间
+           triggerTime: 0, //鼠标延迟触发时间（默认150）
+           returnDefault: true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+       });
+
+    </script>
+    <div id="nav_right">
+        <a href="/free/lesson/index.asp" target="_blank">在线五十音</a>
+		<!--<a href="http://www.eurhope.com.cn/" target="_blank" style="background: url() no-repeat;">去往欧洲</a>-->
+    </div>
+
+      
+   
+    <div class="clear"></div>
+</div>

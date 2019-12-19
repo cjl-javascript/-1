@@ -1,0 +1,205 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=15)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=61"))
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+
+    <link rel="shortcut icon" href="/templates/main//templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>
+                        <h3 class="left"> <a href="/kecheng/">学习课程</a> &gt;</h3> 
+                        <h3 class="left"> 学员心得</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                    <span class="red16B">樱花国际日语绽放你的人生</span><br>
+                    <span class="blk14_h30">
+                        无论你是谁，只要你热爱日语，都可以通过这里的日语学习提升你的自信。不论您的理想是大(赴日留学 驰骋职场 流利口语)还是小(看懂日剧 读懂漫画 体验茶道)樱花国际日语都能帮你实现。
+                    </span><br><br>
+                    <br>
+
+                    <div id="student">
+                        <div class="student_img">
+                            <img alt="李雯" src="/templates/main/images/201504160557343799.jpg" title="专访樱花宝贝李雯"><br>
+                            樱花宝贝<br>
+                            李雯
+                        </div>
+                        <span class="red12_h26">专访樱花宝贝李雯</span><span class="blk12_h26">
+                            <br>
+                            说起在樱花日语最初的那段日子，李雯说那几乎可以用“痴迷”两个字来形容：从早晨一睁开眼，她就乐滋滋地到有着异国情调地樱花报到，和亲切的前台问声好后就一股脑地来到多媒体教学区，自学听读之后再预约小班外教口语课，课后到日语角找同学围拢起来练习，把外教从办公室里“挖”出来做指导，回家路上也不忘拿出樱花自编的低级别单词本——这么说来，每天都几乎有八九个小时“窝”在樱花这个家呢！
+                        </span>
+                        <div style=" clear:both"></div>
+                    </div>
+
+
+                    <div id="student">
+                        <div class="student_img_1">
+                            <img alt="張雁寧" src="/templates/main/images/201504160602066382.jpg" title="向着目标的达成-在樱花日语的一年"><br>
+                            十一段階<br>
+                            張雁寧
+                        </div>
+                        <span class="red12_h26">向着目标的达成-在樱花日语的一年</span><span class="blk12_h26">
+                            <br>
+                            光阴似箭，不久就要迎来在樱花日语学习一周年了。这一年，多亏樱花日语的外教老师们，全外教小班授课让我的口语表达能力得到了很大的提高。在这里有很多日语爱好者，我们可以在一起用日语交流我们的想法，外教也会加入我们的讨论，在樱花学习，轻松愉悦，是个不错的语言环境。
+                        </span>
+                        <div style=" clear:both"></div>
+                    </div>
+
+
+                    <div id="student">
+                        <div class="student_img">
+                            <img alt="李夢嬌" src="/templates/main/images/20150416060729335.jpg" title="怀念从樱花起步的日子"><br>
+                            7級の学生<br>
+                            李夢嬌
+                        </div>
+                        <span class="red12_h26">怀念从樱花起步的日子</span><span class="blk12_h26">
+                            <br>
+                            最初是以想去看一下的心情和妈妈一起来了。和传统学校不一样，樱花国际日语不仅是专门学习日语的地方，还有播放电影的教室，吃饭的场所，也能进行茶道体验。经常有和日本文化相关的活动在这里举行，比如做寿司的活动，还有做蛋糕的活动，圣诞派对等活动也有。到现在为止，一直觉得1年左右的时间过的非常快。
+                        </span>
+                        <div style=" clear:both"></div>
+                    </div>
+
+
+                    <div id="student">
+                        <div class="student_img_1">
+                            <img alt="賴凌華" src="/templates/main/images/201504160608007321.jpg" title="回顾在樱花的学习生活，我收获多多，感慨多多"><br>
+                            <br>
+                            賴凌華
+                        </div>
+                        <span class="red12_h26">回顾在樱花的学习生活，我收获多多，感慨多多</span><span class="blk12_h26">
+                            <br>
+                            皆さん、始めまして、私は賴凌華と申します。広州西関外国語高校の一年生です。中学校の時、日本文化の講座に参加したお陰で、日本語を勉強したくなりました。 私の趣味は、日本のアニメーションとか、ゲームとか．．．日本と関わるものです。偶然で、桜日本語学校を発見して、日本の勉強の生涯を始めました。
+                        </span>
+                        <div style=" clear:both"></div>
+                    </div>
+
+
+                    <div id="student">
+                        <div class="student_img">
+                            <img alt="陈 玲" src="/templates/main/images/201504160609043733.jpg" title="在樱花一点也不会感到无聊，反而过得很快乐"><br>
+                            <br>
+                            陈 玲
+                        </div>
+                        <span class="red12_h26">在樱花一点也不会感到无聊，反而过得很快乐</span><span class="blk12_h26">
+                            <br>
+                            皆さん、こんにちは、私は陳玲と申します。わたしは桜日本語塾で勉強するのはもう四ヶ月になりました。 以前、日本語を勉強するといっても、自信がないから、平日でほとんど話しません。 桜塾に入ってから、皆とよく日本語でコミュニケーションをしたり、先生に色々な助けていただいたりしたので、今簡単な会話が上手になりました。 以上のような次第で、これから、皆さんといっしょに頑張りましょう！
+                        </span>
+                        <div style=" clear:both"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="about_parnter">
+                <span class="red16B">企业合作伙伴</span><br /><br />
+                <ul>
+
+                    <li><img alt='松下' src="/templates/main/images/201504030240072453.gif" /></li>
+
+                    <li><img alt='亦竹' src="/templates/main/images/201504030240245701.gif" /></li>
+
+                    <li><img alt='三菱' src="/templates/main/images/201504030240518018.gif" /></li>
+
+                    <li><img alt='Kanebo' src="/templates/main/images/201504030241155186.gif" /></li>
+
+                    <li><img alt='卡西欧' src="/templates/main/images/201504030241351465.gif" /></li>
+
+                    <li><img alt='佳能' src="/templates/main/images/201504030241528384.gif" /></li>
+
+                    <li><img alt='妮飘' src="/templates/main/images/201504030242171714.gif" /></li>
+
+                    <li><img alt='夏普' src="/templates/main/images/201504030242372902.gif" /></li>
+
+                    <li><img alt='美合利' src="/templates/main/images/201504030243081282.gif" /></li>
+
+                    <li><img alt='jpseek.com' src="/templates/main/images/201504030243275983.gif" /></li>
+
+                    <li><img alt='avexa' src="/templates/main/images/201504030243495742.gif" /></li>
+
+                    <li><img alt='NEC' src="/templates/main/images/201504030244048118.gif" /></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                 $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>$mode.title</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

@@ -1,0 +1,68 @@
+﻿<div id="top" style="position:relative;z-index:0">
+    <div id="logo">
+        <div id="logo_left">
+            <h1>
+                <a href="/">
+                    <img src="https://www.sakurajp.com.cn/template/All/images/logo.jpg" />
+                </a>
+            </h1>
+        </div>
+        <div id="logo_center"><span class="blk16">全国</span></div>
+        <div id="logo_center1">
+            <a href="javascript:" data-reveal-id="myModal" data-animation="fade"><img src="/templates/main/images/btn_place.jpg" /></a>
+        </div>
+        <div id="logo_right">
+            <div style="">
+                <div class="smenu">
+                    <div class="slist">
+                        <div class="textselect" data-id="0">选择</div>
+                        <ul id="listxiala" style="display:none;">
+                            <li data-id="60">百科</li>
+                            <li data-id="62">问答</li>
+                            <li data-id="57">资讯</li>
+                        </ul>
+                    </div>
+                    <input type="text" id="txtkeywords" style="height:36px;border:none; outline:none;font-size:16px;float:left; padding-left:10px;" />
+                    <input type="button" id="btnSearch" style="width:40px;height:36px;background:#f358b4;border:none;color:#FFF;float:right;outline:none; cursor:pointer;" value="搜索" />
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="nav">
+        <div id="nav_main" style="width:1000px;">
+            <div id="nav_left">
+                <ul id="menus">
+                    <li class="nLi">
+                        <h3><a href="/baike/" data-value="question">百科首页</a></h3>
+                    </li>
+                    $set(navlist=cmd.Execute("select * from sk_article_category where channel_id=21"))
+                    ${foreach(item in navlist)}
+                    <li class="nLi">
+                        <h3><a href="/baike/$item.call_index/" data-value="koubei" target="_blank">$item.title</a></h3>
+                    </li>
+                    ${end}
+                
+                </ul>
+            </div>
+
+            <div id="nav_right" style="width:300px;position:relative;">
+                <a href="https://www.sakurajp.com.cn/free/peixun_02.asp?cityid=quanguo&ID=seo&adname=zixun&act=jxys2　" class="dingzhi" rel="nofollow"
+                   target="_blank" style="background:none;color:#FFF;position:absolute;left:-100px;display:block;">
+                    课程定制
+                    <ul class="sub" id="dingzhisub" style="position:absolute;left:-120px;top:34px;z-index:9999;display:none;">
+                        <li><a href="https://www.sakurajp.com.cn/jiaoshi/" style="color: #FFFFFF;background: #f358b4;line-height:35px;height:35px; " target="_blank">专业教师</a></li>
+                        <li><a href="https://www.sakurajp.com.cn/xinde/" style="color: #FFFFFF;background: #f358b4;line-height:35px; height:35px; " target="_blank">学员心得</a></li>
+                    </ul>
+                </a>
+                <a href="/zixun.aspx" target="_blank" style="margin-left:30px;">樱花资讯</a>
+
+
+                <a href="/question.aspx" target="_blank" ">樱花问答</a>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

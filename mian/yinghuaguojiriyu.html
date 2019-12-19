@@ -1,0 +1,167 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=14)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>关于我们——樱花国际日语</title>
+    <meta name="keywords" content="关于我们，关于樱花国际日语" />
+    <meta name="description" content="日语怎么学？来樱花国际日语培训中心——国内知名日语培训机构，为您提供独创多媒体课件、全外教阵容、日式小班环境、自由定课、随到随学、日本文化拓展、中国人学习日语的全新解决方案" />
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/js/sakura.js"></script>
+    
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>
+                        <h3 class="left"> 樱花国际日语</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                    <div id="detail_left">
+                        <img src="/templates/main/images/5a2f6810-6f24-4017-a772-2823cc5865dd.jpg" width="257" height="158" title="樱花国际日语培训" align="" alt="樱花国际日语培训" />
+                    </div>
+                    <p>
+                        <span class="red16B" id="gaoduan">高端专业的日语培训</span><span class="blk14_h30 fs14_lh30"><br /></span>
+                    </p>
+                    <p>
+                        <span class="blk14_h30 fs14_lh30">&emsp;&emsp;</span><span class="red14_h30 fs14_colEC">“樱花国际日语”</span><span class="blk14_h30 fs14_lh30">是由新世界教育集团从日本引进的独立教育机构。中心以先进的日语系统教育为基础，依托新世界教育集团多年来成功的日语本土化辅导经验。用全</span><span class="red14_h30 fs14_colEC">外教的豪华阵容</span><span class="blk14_h30 fs14_lh30_colEC" id="suishi">，随时随地学习的方便条件，新颖科学的</span><span class="red14_h30 fs14_colEC">多媒体授课</span><span class="blk14_h30 fs14_lh30">和对日本文化的深入接触。全方位的让你学习日语，学好日语。</span>
+                    </p>
+                    <p>
+                        <span class="blk14_h30 fs14_lh30"><span></span>&nbsp; 樱花国际日语是目前国内非常有特色的一家提供高端日语课程培训的机构。樱花国际日语结合尖端语言教学的精华，凝聚了具有丰富教学经验的日本语言教授专家和深厚日语功底的中籍教师，为个人和企业设计了极具特色的应用日语口语和商务日语课程，同时开设了丰富多彩的</span><span class="red14_h30 fs14_colEC">文化拓展课程</span><span class="blk14_h30 fs14_lh30">、课外活动和全日语交友社区。&nbsp;</span><span class="fs14_lh30">&nbsp; &nbsp; &nbsp;</span>
+                    </p>
+                    <p>
+                        <span class="riben">&nbsp; &nbsp; &nbsp; 日本特色短期留学</span>
+                    </p>
+                    <p>
+                        <span class="blk14_h30" id="lh30"><span class="fs14_col666">&nbsp; &nbsp; &nbsp; &nbsp; 樱花国际日语开设日本</span><span><span class="fs14"><span class="color_ec">短期特色游学课程：</span><span></span><span class="color_666">由樱花专职老师全程带队，专业的旅游公司设计行程，在樱花日本东京总部学习，边游览日本景点，游玩动漫圣地，边学习相关日语，体验日本传统和新兴文化，玩转真实日本，享受美好假期。行程更将安排参观日本知名大学，参访日本语言学校和升学私塾，为今后的留学腾飞之路提供详尽的参考和铺垫。</span><span class="color_666"></span></span></span></span>
+                    </p>
+                    <p>
+                        <span class="blk14_h30 fs14_lh30"><span><span class="color_ec"><span class="fs16_lh50">&nbsp; &nbsp; &nbsp; 赴日留学一条龙服务</span></span></span></span>
+                    </p>
+                    <p class="blk14_h30 color_666">
+                        <span class="fs14"> &nbsp; &nbsp; &nbsp; &nbsp; 樱花国际日语开展有<span class="fs14_lh30_colEC">赴日留学一条龙服务</span>，从专业教师的一对一留学咨询指导，100%的签证通过率，到赴日就读日本语言学校，参加大学升学考试补习，到考取名牌大学，以及考取大学后的生活帮助资源，樱花日语将全程倾情陪伴。</span>
+                    </p>
+                    <p>
+                        <span class="blk14_h30 fs14_lh30">
+                            &nbsp; &nbsp; &nbsp; &nbsp; 樱花国际日语隶属于新世界教育集团，集团成立于1997年，目前旗下包括新世界进修中心、樱花国际日语、新贝青少儿教育、爱马德汉语培训、智赢雅思等五大品牌分部在全国42个城市拥有180家直营学习中心。
+                            2007年9月美国著名的PE－凯雷资本注资新世界教育2000万美金，新世界教育正式开始向资本市场迈进。
+                            樱花国际日语是新世界教育旗下最重要的品牌之一，从2007年2月开设第一家中心开始，已经在北京、上海、广州、深圳、杭州、大连、苏州等<span class="fs14_lh30_colEC">全国39个城市，开设了55家学习中心</span>，在日本东京开设分校，广受学员好评。
+                        </span></span>
+                    </p>
+                    <p>
+                        <span class="blk14_h30 fs14_lh30"></span>
+                    </p>
+                </div>
+            </div>
+            <div id="about_parnter">
+                <span class="red16B">企业合作伙伴</span><br /><br />
+                <ul>
+
+                    <li><img alt='松下' src="/templates/main/images/201504030240072453.gif" /></li>
+
+                    <li><img alt='亦竹' src="/templates/main/images/201504030240245701.gif" /></li>
+
+                    <li><img alt='三菱' src="/templates/main/images/201504030240518018.gif" /></li>
+
+                    <li><img alt='Kanebo' src="/templates/main/images/201504030241155186.gif" /></li>
+
+                    <li><img alt='卡西欧' src="/templates/main/images/201504030241351465.gif" /></li>
+
+                    <li><img alt='佳能' src="/templates/main/images/201504030241528384.gif" /></li>
+
+                    <li><img alt='妮飘' src="/templates/main/images/201504030242171714.gif" /></li>
+
+                    <li><img alt='夏普' src="/templates/main/images/201504030242372902.gif" /></li>
+
+                    <li><img alt='美合利' src="/templates/main/images/201504030243081282.gif" /></li>
+
+                    <li><img alt='jpseek.com' src="/templates/main/images/201504030243275983.gif" /></li>
+
+                    <li><img alt='avexa' src="/templates/main/images/201504030243495742.gif" /></li>
+
+                    <li><img alt='NEC' src="/templates/main/images/201504030244048118.gif" /></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>樱花国际日语</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="clear"></div>
+
+	
+    $load("_footer.html")
+	
+<!-- 樱花GA统计代码 -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-82742612-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+</body>
+</html>

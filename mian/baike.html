@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>【樱花日语培训百科】最全面的日语培训人物、机构、资源、学校等信息——樱花国际日语</title>
+    <meta name="keywords" content="樱花日语培训百科，樱花国际日语" />
+    <meta name="description" content="樱花日语（sakurajp.com.cn）培训百科专题集合了日语培训人物、机构、资源、学校等各种知识，有最全面的日语培训疑难问题解答，想要了解更多日语培训相关问题，请关注樱花日语。" />
+
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+
+</head>
+<body>
+    $Load("dialog.html")
+    $load("baike/_head.html")
+
+    <div class="main">
+        <div class="navlist">
+            <ul>
+                <li><a href="/" target="_blank">首页 &gt;</a></li>
+                <li><a href="/">百科首页</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        $set(catelist=cmd.Execute("select * from sk_article_category where channel_id=21 order by sort_id asc"))
+        ${foreach(cate in catelist)}
+        <div class="baikelist" style="padding-left:15px">
+            <div class="catelist">
+                <div class="bktitle left"><a href="#"  style="color:#000;">${cate.title}</a></div>
+                <div class="bkcate right">
+                        
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="bkboxlist">
+                <ul>
+                    $set(list=cmd.Execute("select top 12* from sk_channel_article_baike where channel_id=21 and category_id="+cate.id+" order by id desc"))
+                    ${foreach(item in list)}
+					
+                    <li>
+                        <a href="/baike/${cate.call_index}/${item.id}.html">
+                            <div class="img"><img src="$item.img_url" width="150" height="110"></div>
+                            <div class="textt">$if(item.title.Length>10)
+													$item.title.SubString(0,10) ...
+											   $else
+													$item.title
+											   $end
+							</div>
+                        </a>
+                    </li>
+                    ${end}
+
+                </ul>
+                <div class="clear"></div>
+
+            </div>
+
+        </div>
+        ${end}
+
+        <br>
+
+    </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+</body>
+</html>

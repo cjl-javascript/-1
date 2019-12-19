@@ -1,0 +1,127 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=14)
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=56"))
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link href="../../Content/css/pagination.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+	  <link rel="stylesheet" type="text/css" href="/content/css/pagination.css.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>
+                        <h3 class="left"> <a href="/yinghuaguojiriyu/">樱花国际日语</a> &gt;</h3>
+                        <h3 class="left"> 新闻纪事</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                    <div id="auth_news">
+                        <ul class="list_time">
+                            
+                           $set(newlist=cmd.Get_Page_List(15,"sk_channel_article_yinghuaguojiriyu","   channel_id="+channel_id+" and category_id=56"," id desc"))
+                            ${foreach(item in newlist)}
+                            <li>
+                                ${if(item.link_url!="")}
+                                <a href="$item.link_url" target="_blank">$item.title</a>
+                                <div class="right">
+                                    <span class="datatags" data-tag=""></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span>[$cmd.DateFormat(item.add_time.ToString(),0)]</span>
+                                </div>
+                                <div class="clear"></div>
+                                ${else}
+                                <a href="/news/${item.id}.html" target="_blank">$item.title</a>
+                                <div class="right">
+                                    <span class="datatags" data-tag=""></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span>[$cmd.DateFormat(item.add_time.ToString(),0)]</span>
+                                </div>
+                                <div class="clear"></div>
+                                ${end}
+                            </li>
+                            ${end}
+                        </ul>
+                        <br />
+                        <div class="pink">
+                            $cmd.OutPageList(15,"sk_channel_article_yinghuaguojiriyu"," channel_id="+channel_id+" and category_id=56","/news/?page=__id__")
+                        </div>
+                        <br />
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>樱花国际日语</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

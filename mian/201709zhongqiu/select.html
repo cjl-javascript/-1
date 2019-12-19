@@ -1,0 +1,8 @@
+﻿						<option value="0">选择城市</option>
+						$set(list=cmd.Execute("select * from sk_city where  islock=1 and parentid=0 and citycode not in('福建','江苏','广东','浙江','山东') "))
+						$foreach(item in list)
+		                <option value="$item.cityname" data-city="$item.citycode">$item.cityname</option>
+						$end
+						
+						
+						 

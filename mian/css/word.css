@@ -1,0 +1,23 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.blk16{font-size: 16px;font-family: "微软雅黑";line-height: 30px;}
+.blk12_h22{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 22px;color: #333;}
+a.blk12_h22{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 22px;color: #ec008c;}
+a.blk12_h22:hover{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 22px;color: #ec008c;text-decoration: underline;}\
+.blk12_h26{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 26px;color: #666;text-decoration: none;}
+a.blk12_h26{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 26px;color: #666;text-decoration: none;}
+a.blk12_h26:hover{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 26px;color: #ec008c;text-decoration: underline;}
+.blk14{font-size: 14px;font-family: "微软雅黑", Times, serif;color: #666;text-decoration: none;}
+.blk14B{font-size: 14px;font-family: "微软雅黑", Times, serif;color: #666;text-decoration: none;line-height: 30px;font-weight: bold;}
+.blk14_h24{font-size: 14px;font-family: "微软雅黑", Times, serif;line-height:24px;color: #666;text-decoration: none;}
+.blk14_h30{font-size: 14px;font-family: "微软雅黑", Times, serif;line-height: 30px;color: #666;text-decoration: none;}
+a.blk14_h30:hover{font-size: 14px;font-family: "微软雅黑", Times, serif;line-height: 30px;color: #ec008c;text-decoration: underline;}
+.red12_h26{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 26px;color: #ec008c;}
+.red12B{font-size: 12px;font-family: "微软雅黑", Times, serif;color: #ec008c;font-weight: bold;}
+.red14_h30{font-size: 14px;font-family: "微软雅黑", Times, serif;color: #ec008c;}
+a.red14_h30{font-size: 14px;font-family: "微软雅黑", Times, serif;color: #ec008c;}
+a.red14_h30:hover{font-size: 14px;font-family: "微软雅黑", Times, serif;color: #ec008c;text-decoration: underline;}
+.red12_h22{font-size: 12px;font-family: "微软雅黑", Times, serif;line-height: 22px;color: #ec008c;}
+.red14{font-size: 14px;font-family: "微软雅黑", Times, serif;line-height: 30px;color: #ec008c;}
+.red14B{font-size: 14px;font-family: "微软雅黑", Times, serif;line-height: 30px;color: #ec008c;font-weight: bold;}
+.red16B{font-size: 16px;font-family: "微软雅黑", Times, serif;line-height: 50px;color: #ec008c;font-weight: bold;}

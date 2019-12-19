@@ -1,0 +1,120 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=15)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>日语一级培训丨日语二级培训丨日语课程——樱花国际日语</title>
+    <meta name="keywords" content="日语课程，日语网络课程，日语学习课程，日语一级培训，日语二级培训，樱花国际日语" />
+    <meta name="Description" content="从初学到精通，樱花国际日语将课程划分为12个级别，有日语一级培训、日语二级培训等。通过和课程顾问沟通及详尽的水平测试，我们可以确定您的语言水平，并帮助您制定合适的学习计划。根据我们的经验，在交互式多媒体教学和外教辅导结合的情况下，绝大部分的学员可以在2个月之内完成一个级别的学习。" />
+    <link rel="shortcut icon" href="/templates/main//templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/js/sakura.js"></script>
+
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">当前位置：<a href="/">首页</a> &gt 学习课程</span>
+                </div>
+                <div id="detail">
+                    <table class="tab1" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="h1" align="left" height="30">樱花国际日语专门为个人的需求而设</td></tr><tr><td class="td1" align="left"><p class="p1"><span class="span1">从初学到精通，<span class="red">樱花国际日语</span>将课程划分为12个级别。通过和课程顾问沟通及详尽的水平测试，我们可以确定您的语言水平，并帮助您制定合适的学习计划。根据我们的经验，在交互式多媒体教学和外教辅导结合的情况下，绝大部分的学员可以在2个月之内完成一个级别的学习。</span></p></td></tr><tr><td class="td1" align="center" height="340"><img src="/templates/main/images/201509101121426507.gif" alt="" height="309" width="414" /></td></tr></tbody></table><table class="tab1" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="td1"><table class="" border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td class="td1" align="left" valign="top" width="48%"><table class="tab2" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="telzt1" align="left" background="/templates/main/images/xxjb_16.gif" height="20">&nbsp;初级（2 3 4级别）</td></tr><tr><td class="line2" align="left" height="90"><span class="span1"><span class="red">听\说能力:</span>能够在熟悉的语境里表达简单的意见和要求<br />如：自我介绍,点单,咨询等&nbsp;<br /><span class="red">相当于:</span>JLPT 3级/JTEST D级</span></td></tr></tbody></table><table class="          " border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="telzt1" align="left" background="/templates/main/images/xxjb_21.gif" height="20">&nbsp;中级（5 6 7级别）</td></tr><tr><td class="line2" align="left"><span class="span1"><span class="red">听说能力：</span>能够就抽象的或者文化方面的讨论题目在一定范围内表达自己的意见，或者就某一了解领域提出建议，发表自己的意见。<br />如：参与活动,看懂影视资料，参与一般会议。<br /><span class="red">相当于：</span>JLPT 2级/JTEST C级</span></td></tr></tbody></table></td><td class="td2" align="center" valign="top" width="52%"><table class="tab2" border="0" cellpadding="0" cellspacing="0" width="90%"><tbody><tr><td class="telzt1" align="left" background="/templates/main/images/xxjb_09.gif" height="20">&nbsp;高级（8 9 10级别）</td></tr><tr><td class="line2" align="left" height="120"><span class="span1"><span class="red">听说能力：</span>能够在会议上和研讨会上就本领域的工作发表看法或者能够以一定的流利程度进行轻松的交谈，应付较难理解的表达方式。<br />如：与日本语母语人氏无障碍交流。<br /><span class="red">相当于：</span>JLPT 1级/ JTEST B级</span></td></tr></tbody></table><table class="tab2" border="0" cellpadding="0" cellspacing="0" width="90%"><tbody><tr><td class="telzt1" align="left" background="/templates/main/images/xxjb_19.gif" height="20">&nbsp;专家（超高级）</td></tr><tr><td class="line2" align="left" height="90"><span class="span1">在语言交流及书写等各方面,成为翻译者<br /><span class="red">相当于：</span>JTEST A级</span></td></tr></tbody></table></td></tr></tbody></table><table class="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="td1" align="left" height="40"><span class="h1">樱花国际日语---授课流程</span></td></tr><tr><td class="td1" align="center" height="410"><img src="/templates/main/images/201509101119325684.gif" alt="" /></td></tr></tbody></table></td></tr></tbody></table>
+                </div>
+
+            </div>
+            <div id="about_parnter">
+                <span class="red16B">企业合作伙伴</span><br /><br />
+                <ul>
+
+                    <li><img alt='松下' src="/templates/main/images/201504030240072453.gif" /></li>
+
+                    <li><img alt='亦竹' src="/templates/main/images/201504030240245701.gif" /></li>
+
+                    <li><img alt='三菱' src="/templates/main/images/201504030240518018.gif" /></li>
+
+                    <li><img alt='Kanebo' src="/templates/main/images/201504030241155186.gif" /></li>
+
+                    <li><img alt='卡西欧' src="/templates/main/images/201504030241351465.gif" /></li>
+
+                    <li><img alt='佳能' src="/templates/main/images/201504030241528384.gif" /></li>
+
+                    <li><img alt='妮飘' src="/templates/main/images/201504030242171714.gif" /></li>
+
+                    <li><img alt='夏普' src="/templates/main/images/201504030242372902.gif" /></li>
+
+                    <li><img alt='美合利' src="/templates/main/images/201504030243081282.gif" /></li>
+
+                    <li><img alt='jpseek.com' src="/templates/main/images/201504030243275983.gif" /></li>
+
+                    <li><img alt='avexa' src="/templates/main/images/201504030243495742.gif" /></li>
+
+                    <li><img alt='NEC' src="/templates/main/images/201504030244048118.gif" /></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>学习课程</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+    $load("_footer.html")
+</body>
+</html>

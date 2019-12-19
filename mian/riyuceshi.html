@@ -1,0 +1,152 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(channel_id=17)
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=86"))
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+    <link rel="shortcut icon" href="/templates/main//templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="activity">
+        <span class="blk12_h26">
+            <h3 class="left">当前位置：</h3>
+            <h3 class="left"><a href="/">首页</a> &gt; </h3>
+            <h3 class="left"> 申请免费日语测试</h3>
+            <div class="clear"></div>
+        </span>
+    </div>
+    <div id="test">
+        <div id="step">
+            <ul>
+                <li>
+                    <img src="/templates/main/images/pic_step1.jpg" /><br />
+                    只需填写左边的表格，<br />
+                    就能立刻获得免费个人咨询。
+                </li>
+                <li>
+                    <img src="/templates/main/images/pic_step2.jpg" /><br />
+                    我们的专业课程顾问将向你<br />
+                    解释所有的课程细节，并回答<br />
+                    您的所有问题。
+                </li>
+                <li>
+                    <img src="/templates/main/images/pic_step3.jpg" /><br />
+                    通过日语测试，更深入地了解<br />
+                    您目前的日语水平和学习需求。
+                </li>
+                <li>
+                    <img src="/templates/main/images/pic_step4.jpg" /><br />
+                    您将获得一份完全个性化的<br />
+                    学习计划，按照您的日语水平、<br />
+                    学习时间和学习目的量身定做。
+                </li>
+                <li>
+                    <img src="/templates/main/images/pic_step5.jpg" /><br />
+                    登陆课程，轻松点击，享受<br />
+                    拥有私人教练的无穷乐趣吧。<br />
+                    你已经走向通往成功的道路，<br />
+                    看见光明的未来......
+                </li>
+            </ul>
+        </div>
+        <div id="test_table">
+            <span class="red16B">获取您的免费个人咨询！</span><br />
+            <span class="blk14B">专业的课程顾问将为您提供一对一的课程设计。</span><br />
+            <span class="blk14_h30">拨打</span><span class="red14B">4001 800 111</span><span class="blk14_h30">或填写以下表格。我们会尽快与您联系。</span> <br /><br />
+            <div id="login_test">
+                <p>中文名字：<input class="names" name="names" placeholder="请输入您的姓名" type="text" />　请留下真实姓名 以便通知您领取礼品</p>
+                <p>手　　机：<input class="mbs" name="mbs" type="text" placeholder="免费获取试听课程" />　必填，请确保信息真实有效</p>
+                <p>
+                    所住城市：
+                    <select id="citys" class="citys">
+                        <option value="" selected="">选择城市</option>
+                        <option value="上海">上海</option>
+                        <option value="杭州">杭州</option>
+                        <option value="宁波">宁波</option>
+                        <option value="苏州">苏州</option>
+                        <option value="无锡">无锡</option>
+                        <option value="南京">南京</option>
+                        <option value="南通">南通</option>
+                        <option value="昆山">昆山</option>
+                        <option value="常州">常州</option>
+                        <option value="常熟">常熟</option>
+                        <option value="扬州">扬州</option>
+                        <option value="温州">温州</option>
+                        <option value="北京">北京</option>
+                        <option value="天津">天津</option>
+                        <option value="大连">大连</option>
+                        <option value="青岛">青岛</option>
+                        <option value="广州">广州</option>
+                        <option value="深圳">深圳</option>
+                        <option value="佛山">佛山</option>
+                        <option value="福州">福州</option>
+                        <option value="厦门">厦门</option>
+                        <option value="重庆">重庆</option>
+                        <option value="成都">成都</option>
+                        <option value="合肥">合肥</option>
+                        <option value="武汉">武汉</option>
+                        <option value="济南">济南</option>
+                        <option value="长沙">长沙</option>
+                        <option value="其他">其他</option>
+                    </select>　
+                </p>
+                <p>
+                    职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：<select name="select2">
+                        <option>请选择</option>
+                        <option>销售</option>
+                        <option>公关</option>
+                    </select>
+                </p>
+                <p>E - Mail ：<input class="emails" type="text" placeholder="订阅资料和优惠" /></p>
+                <span><input id="btnSubmit1" type="button" class="login_test_btn" value=" " /></span>
+            </div>
+            <div class="pad_lef30"><img src="/templates/main/images/stk_17.gif" /></div>
+        </div>
+        <span class="blk12_h26">
+            我们保证个人信息的安全。保护您的隐私对我们而言非常重要。我们永远不会出售或者交易您提供给我们的任何信息。<br />
+            请阅读我们的隐私权政策。 <a href="#" target="_blank" class="blk12_h26">在此点击</a>
+        </span>
+
+    </div>
+	
+$if(citycode=="quanguo")
+ $set(modelcity=cmd.GetCityModel("shanghai"))
+ $config.webcountcode
+ $modelcity.jshtml
+$else
+$config.webcountcode
+$modelcity.jshtml
+$end
+</body>
+</html>
+${end}

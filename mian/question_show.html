@@ -1,0 +1,166 @@
+﻿$set(id=cmd.QueryString("id","0"))
+$set(model=cmd.GetModel("23",id.ToString()))
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>$model.title</title>
+		<meta name="keywords" content="$model.seo_keywords" />
+		<meta name="description" content="$model.seo_description" />
+
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+
+</head>
+<body>
+    $Load("dialog.html")
+    $load("question/_head.html")
+    <div class="main">
+        <div class="navlist">
+            <ul>
+                <li><a href="/">首页&gt;</a></li>
+                <li><a href="/question.aspx">樱花问答  &gt;</a></li>
+                <li style="font-size:14px;padding-top:2px;">$model.title</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="tagslist">
+            <div class="leftright border">
+                <div class="questiontitle"><h1>$model.title</h1></div>
+                <div class="showxinxi left">
+                    来源：  樱花国际日语
+                    &nbsp;&nbsp;
+                    时间：$cmd.DateFormat(model.add_time.ToString(),0) &nbsp;&nbsp;浏览量：$cmd.click
+                </div>
+
+                <div class="clear"></div>
+                <div class="showbiaoqian">
+                    <span  style="font-size:12px;padding-left:9px;margin-top:18px;float:left;">关键词:</span>
+                    <ul class="tagslistwenben" style="width:80%;float:left;">
+                        $set(taglist=cmd.Execute("select * from v_article_tags where  article_id="+model.id))
+                        $foreach(item in taglist)
+                        <li><a href="#">$item.title</a></li>
+                        $end
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="questionxiangxi">
+                    <div class="stt">详细描述：</div>
+                    <div class="sjj">
+                        $model.zhaiyao
+                    </div>
+                </div>
+                <div class="showinfo bordertop">
+                    <div class="stitle">最佳答案：</div>
+                    <div class="content">
+                        $model.content
+                    </div>
+                </div>
+                <div style="border-bottom:1px solid #999;display:none;"></div>
+                <div style="height:50px; line-height:30px; display:none;">
+                    <div>	上一篇：小编偷懒还没写</div>
+                    <div>	下一篇：<a href="">日本出国留学好吗？出国去日本留学怎么样</a></div>
+                </div>
+            </div>
+            <div class="rightleft">
+                <div class="wenda" style="margin:0 auto">
+                    <div class="title">最新问答 </div>
+                    <ul>
+
+                        $set(newquestion=cmd.Execute("select top  9 * from sk_channel_article_question order by ID Desc"))
+                        $set(n=0)
+                        $foreach(item in newquestion)
+						$set(qm=cmd.GetCateModel(" id="+item.category_id))
+                        $set(n++)
+                        <li>
+                            <a href="/question/${qm.call_index}/${item.id}.html" target="_blank">
+                                <span data-id="1" class="index bgray">$n</span>
+                                $if(item.title.Length>15)
+                                ${item.title.SubString(0,14)} ...
+                                $else
+                                ${item.title}
+                                $end
+                            </a>
+                        </li>
+                        $end
+
+                    </ul>
+                </div>
+                <script type="text/javascript" src="/templates/main/js/tagscloud.js"></script>
+                <div class="baioqian mg-20">
+                    <div class="title">标签云 </div>
+                    <ul id="tagscloud">
+                        $set(taglist=cmd.Execute("select top 20 a.id,a.title,b.article_id from sk_article_tags as a,sk_article_tags_relation as b where a.id=b.tag_id "))
+                        $foreach(item in taglist)
+                        <li><a href="#" target="_blank">$item.title</a></li>
+                        $end
+
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="zuixin mg-20">
+                    <div class="title">热门资讯</div>
+                    <ul>
+                        $set(newzixun=cmd.Execute("select top  9 * from sk_channel_article_zixun order by ID Desc"))
+                        $set(n=0)
+                        $foreach(item in newzixun)
+						$set(qm=cmd.GetCateModel(" id="+item.category_id))
+                        $set(n++)
+                        $set(n++)
+                        <li>
+                            <a href="/zixun/$qm.call_index/${item.id}.html" target="_blank">
+                                <span data-id="1" class="index bgray">$n</span>
+                                $if(item.title.Length>15)
+                                ${item.title.SubString(0,14)} ...
+                                $else
+                                ${item.title}
+                                $end
+                            </a>
+                        </li>
+                        $end
+
+                    </ul>
+                </div>
+
+
+                <div class="baike">
+                    <div class="title">最新百科 </div>
+                    <ul>
+
+                        $set(newbaike=cmd.Execute("select top  9 * from sk_channel_article_baike order by ID Desc"))
+                        $set(n=0)
+                        $foreach(item in newbaike)
+						$set(qm=cmd.GetCateModel(" id="+item.category_id))
+                        $set(n++)
+                        $set(n++)
+                        <li>
+                            <a href="/baike/$qm.call_index/.aspx?id=$item.id" target="_blank">
+                                <span data-id="1" class="index bgray">$n</span>
+                                $if(item.title.Length>15)
+                                ${item.title.SubString(0,14)} ...
+                                $else
+                                ${item.title}
+                                $end
+                            </a>
+                        </li>
+                        $end
+
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+</body>
+</html>

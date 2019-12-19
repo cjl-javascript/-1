@@ -1,0 +1,161 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=14)
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=57"))
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>$site.seo_title</title>
+    <meta name="keywords" content="$site.seo_keyword" />
+    <meta name="Description" content="$site.seo_description" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link type="text/css" rel="stylesheet" href="/templates/main/css/jquery.galleryview-3.0-dev.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.galleryview-3.0-dev.js"></script>
+    <script src="/templates/main/js/jquery.timers-1.2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>
+                        <h3 class="left"> <a href="/yinghuaguojiriyu/">樱花国际日语</a> &gt;</h3>
+                        <h3 class="left">学习环境</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                    <p>
+                        <span class="red16B xuexi">学习环境</span><span class="blk14_h30"><br />　　</span><span class="blk14_h30">
+                            “日语学习是一种非母语的学习，对学生来说激发学习兴趣并促使自
+                            主学习显得尤为重要，而学习环境的优劣就显得尤为重要。日语本身就是一种交际性很强的学科，学生对自己的日语水平缺乏信心，不敢大声说出口，以至于形成了哑巴日语。 樱花国际日语的办学宗旨之一就是“营造学习氛围，激发学习兴趣”，以提高语言交际能力，生活化，兴趣化的交流，为配合营造良好的学习氛围，樱花国际日语始终相信舒适的学习环境与教学系统同样重要，因此，我们在硬件设施上的投资超过其他任何一所学校，来樱花国际日语学习日语充满乐趣，还可以和日本老师一起参加学员生活俱乐部与职业规划讲座。如今，我们已经在全国30多个城市开设了日语培训中心。
+                        </span><br />
+                    </p>
+                    <br />
+                    <div id="images">
+                        <ul id="myGallery">
+                            <li><img src="/templates/main/images/1.jpg" /></li>
+                            <li><img src="/templates/main/images/2.jpg" /></li>
+                            <li><img src="/templates/main/images/3.jpg" /></li>
+                            <li><img src="/templates/main/images/4.jpg" /></li>
+                            <li><img src="/templates/main/images/7.jpg" /></li>
+                            <li><img src="/templates/main/images/13.jpg" /></li>
+                            <li><img src="/templates/main/images/34.jpg" /></li>
+                            <li><img src="/templates/main/images/a1.jpg" /></li>
+                            <li><img src="/templates/main/images/a2.jpg" /></li>
+                            <li><img src="/templates/main/images/a3.jpg" /></li>
+                            <li><img src="/templates/main/images/a4.jpg" /></li>
+                            <li><img src="/templates/main/images/a5.jpg" /></li>
+                            <li><img src="/templates/main/images/a6.jpg" /></li>
+                            <li><img src="/templates/main/images/a7.jpg" /></li>
+                            <li><img src="/templates/main/images/a8.jpg" /></li>
+                            <li><img src="/templates/main/images/a9.jpg" /></li>
+                        </ul>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#myGallery').galleryView();
+                            });
+                        </script>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div id="about_parnter">
+                <span class="red16B">企业合作伙伴</span><br /><br />
+                <ul>
+
+                    <li><img alt='松下' src="/templates/main/images/201504030240072453.gif" /></li>
+
+                    <li><img alt='亦竹' src="/templates/main/images/201504030240245701.gif" /></li>
+
+                    <li><img alt='三菱' src="/templates/main/images/201504030240518018.gif" /></li>
+
+                    <li><img alt='Kanebo' src="/templates/main/images/201504030241155186.gif" /></li>
+
+                    <li><img alt='卡西欧' src="/templates/main/images/201504030241351465.gif" /></li>
+
+                    <li><img alt='佳能' src="/templates/main/images/201504030241528384.gif" /></li>
+
+                    <li><img alt='妮飘' src="/templates/main/images/201504030242171714.gif" /></li>
+
+                    <li><img alt='夏普' src="/templates/main/images/201504030242372902.gif" /></li>
+
+                    <li><img alt='美合利' src="/templates/main/images/201504030243081282.gif" /></li>
+
+                    <li><img alt='jpseek.com' src="/templates/main/images/201504030243275983.gif" /></li>
+
+                    <li><img alt='avexa' src="/templates/main/images/201504030243495742.gif" /></li>
+
+                    <li><img alt='NEC' src="/templates/main/images/201504030244048118.gif" /></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>樱花国际日语</span></h3>
+                    <ul>
+                       
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id=14")}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}.aspx/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+    $load("_footer.html")
+</body>
+</html>
+${end}

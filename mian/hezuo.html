@@ -1,0 +1,121 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=14)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=87"))
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>$site.seo_title</title>
+    <meta name="keywords" content="$site.seo_keyword" />
+    <meta name="Description" content="$site.seo_description" />
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/js/sakura.js"></script>
+    
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"> 樱花国际日语</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                   <p>
+    <span class="blk14_h30" style="font-size: 14px; font-family: 微软雅黑, Times, serif; line-height: 30px; color: rgb(102, 102, 102);">在这样一个常被称为“信息时代”、“知识经济时代”的社会里，教育产业化、国际化的趋势，使教育培训机构得到了巨大的发展空间。教育培训被认为是最有价值的投资项目之一，为全球的战略投资家所推崇。另外，在知识经济大潮的推动下，终身教育在人们的生活中也成为不可或缺的一个环节，这就意味着知识将在人们的工作、生活中扮演越来越重要的角色。人们对知识的渴求，迅速催生了国内教育培训市场，也促使该市场以惊人的速度飞快发展。经过知识经济的风起云涌，旧的市场阵地被不断地蚕食，新的市场又被不断地开辟，教育市场就在这样的浪潮中成长，并且日益成熟起来。<br/>　　从全国范围来看，上海、北京、广州、西安、重庆、成都、武汉这些高校云集的地区，培训机构相对较多。这些培训机构一般采用区域性扩张法，高强度地向二、三级城市发展，以便形成高密度的渠道网络。中国培训业规模以每年30%的速度递增，2007年中国培训业收入达到1000多亿元。全国培训机构大概有10000家，其中，北京有2000家，上海有1500家，广州有1000家。从细分市场看，外语培训和IT培训是教育培训的两大支柱，其他诸如企业管理类培训、金融培训、辅助考试类培训等，也都具有广阔的市场。<br/>　　赛迪顾问发布的《2008年中国教育与培训业研究咨询报告》显示：未来5-10年，中国教育培训整个市场将达到3000亿人民币，作为教育培训产业的五大分支之一，语言培训的市场规模也将达到1900亿人民币，其中，日语培训业的市场规模将占到600多亿元。<br/>　　根据日本经济新闻社的最新调查，有近八成的日企表示将继续加强在中国的事业发展，扩大投资，截止到目前，落户上海的日资企业已达5000余家，近七成为制造类企业，今后一二年内将进入中国，投资长三角地区的万余家日资中小企业也以飞快的速度增长。伴随着日企的大批量进驻，不少中国公司也纷纷出现在日本设立子公司，合资公司，以及收购日本企业的商业动向。目前，中国各大商业银行、通信企业、IT行业、制造业和服务行业的销售部门等都已经开始较大规模的进军日本市场。基于以上种种因素，使得各企业对日语人才的要求也从前几年的能听懂简单指示就行，转而到目前要能与日本技术人员充分沟通，与日本商业代办谈判，与日本产品开发人员做市场分析，这也就迫使日资企业对本地员工的口语要求越来越高，对此类人才的需要也越来越大。<br/>　　想进日企，具备良好的日语能力是基本条件。因为日资企业的管理人员以日籍人员居多，在这种环境中不能用日语交流就难以开展工作。几乎所有日企招聘，都会有日语能力的要求，所以“日语能力考”或者是素有日语托业之称的“J.TEST”，成了大多数有志于“进军”日企者必须面对的第一关。但需指出的是，在日企就职一般需达到“日语能力考试”二级以上程度，目前市场上具有这样水平的日语人才并不多，更何况对应聘者日语能力的要求还有总体提高的趋势。日语一、二级证书只能作为通行证，若要在日企有更好的发展，日语口语能力才是不能忽略的关键，而掌握日语实用能力的人也势必会更受日企欢迎。 在中日政经关系不断密切和深化的背景下，日语培训市场必将成为培训业中的又一个”第一桶金”。<br/>　　随着日语培训市场金矿效应的拱现，每年都会有一些新的机构的进入培训行业，这导致竞争加剧，而激烈的竞争，每年都会将一些机构淘汰出局，只有那些拥有完善的教学模式、管理体系的学校，只有那些定位准确、做出特色的机构才能获得生存的空间，并继续稳固发展。日语培训行业进入一个市场细分时期，那些拥有科学理念、规范管理、统一经营的品牌学校成了学生的首选，这也成为培训市场以后的一个大趋势：树立品牌，维护品牌，建立机构联盟。<br/>　　</span><span class="red14B" style="font-size: 14px; font-family: 微软雅黑, Times, serif; line-height: 30px; color: rgb(236, 0, 140); font-weight: bold;">樱花国际日语</span><span class="blk14_h30" style="font-size: 14px; font-family: 微软雅黑, Times, serif; line-height: 30px; color: rgb(102, 102, 102);">成立于2007年，是由新世界教育集团从日本引进的独立教育机构。中心以先进的日语系统教育为基础，依托新世界教育集团多年来成功的日语本土化辅导经验，将国外的管理实践经验和基于先进技术的教学方法相结合，并传递给每位投资者。这种商务体系将提供给每位加盟者一个完整全面的综合模型，帮助他们在现有基础上建立学校，并获得成功。<br/>　　樱花国际日语特许经营体系的核心是运营手册、教学模式、管理软件，这些将确保加盟中心各项工作的高质量运作，而这也是加盟商取得成功并参与到中国庞大的教育市场所需要的。在樱花国际日语中国总部的指导和支持下，从学校的创立、核心管理人员的聘用培训、日常经营管理、市场预算拟定、广告宣传、困难问题的解决等方面，加盟者都会获得详尽的计划和协助，为了确保各个学校都能获得成功，樱花国际日语中国总部将会为每个加盟者提供可靠的服务和清晰的运作步骤。</span><br/>
+</p>
+                </div>
+            </div>
+            <div id="about_parnter">
+                <span class="red16B">企业合作伙伴</span><br /><br />
+                <ul>
+
+                    <li><img alt='松下' src="/templates/main/images/201504030240072453.gif" /></li>
+
+                    <li><img alt='亦竹' src="/templates/main/images/201504030240245701.gif" /></li>
+
+                    <li><img alt='三菱' src="/templates/main/images/201504030240518018.gif" /></li>
+
+                    <li><img alt='Kanebo' src="/templates/main/images/201504030241155186.gif" /></li>
+
+                    <li><img alt='卡西欧' src="/templates/main/images/201504030241351465.gif" /></li>
+
+                    <li><img alt='佳能' src="/templates/main/images/201504030241528384.gif" /></li>
+
+                    <li><img alt='妮飘' src="/templates/main/images/201504030242171714.gif" /></li>
+
+                    <li><img alt='夏普' src="/templates/main/images/201504030242372902.gif" /></li>
+
+                    <li><img alt='美合利' src="/templates/main/images/201504030243081282.gif" /></li>
+
+                    <li><img alt='jpseek.com' src="/templates/main/images/201504030243275983.gif" /></li>
+
+                    <li><img alt='avexa' src="/templates/main/images/201504030243495742.gif" /></li>
+
+                    <li><img alt='NEC' src="/templates/main/images/201504030244048118.gif" /></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>樱花国际日语</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+</body>
+</html>

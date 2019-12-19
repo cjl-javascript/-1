@@ -1,0 +1,18 @@
+		body{font-family: "Arial","Microsoft YaHei",sans-serif;color: #333;line-height: 1;padding: 0px;margin: 0px;overflow-x: hidden;}
+		#form1{width:800px;margin:0 auto; font-size:20px;padding-top:70px; font-weight:bold;}
+		.bgcl{width:170px;font-size:20px;line-height:2;border:1px solid #ccc;text-indent:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px; margin-bottom:20px;margin-right: 20px;background-color: #efefef;}
+		.btn{background-color:#f0b750;width:180px;font-size:20px;font-weight: bold;line-height:2;color:#fff;text-align:center;border: none;-moz-border-radius:50px;-webkit-border-radius:50px;border-radius:50px;cursor: pointer;margin-top: 30px;}
+
+
+		.div1{height: 622px;background-image: url("/templates/main/public/201709zhongqiu/images/banner-zhongqiu.jpg");background-position: center;}
+		.div2{height: 875px;background-image: url("/templates/main/public/201709zhongqiu/images/zhongqiu-body.jpg");background-position: center;background-repeat: no-repeat;}
+		.div3{height: 455px;background-image: url("/templates/main/public/201709zhongqiu/images/foot.png");background-position: center;background-repeat: no-repeat;}
+		.box{width: 1000px;margin: 0 auto;text-align: center;padding-top: 320px;font-size: 20px;}
+		.ques{width: 240px;height: 55px;display: inline-block;cursor: pointer;}
+		.q1{background-image: url("/templates/main/public/201709zhongqiu/images/one-1.jpg");background-position: center;}
+		.q2{background-image: url("/templates/main/public/201709zhongqiu/images/one-2.jpg");background-position: center;}
+		.q3{background-image: url("/templates/main/public/201709zhongqiu/images/too-1.jpg");background-position: center;}
+		.q4{background-image: url("/templates/main/public/201709zhongqiu/images/too-2.jpg");background-position: center;}
+		.f1{margin-top: 20px;}
+		.outside{display: inline-block;width: 245px;height: 60px;padding-top: 2.5px;padding-left: 1px;box-sizing: border-box;}
+		.checked{background-image: url("/templates/main/public/201709zhongqiu/images/xuanzhong-zhongqiu.png");}

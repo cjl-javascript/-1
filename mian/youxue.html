@@ -1,0 +1,148 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(channel_id=20)
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>日本游学丨日本游学机构丨日本游学团——樱花国际日语</title>
+    <meta name="keywords" content="日本游学，日本游学机构，日本游学团，樱花国际日语" />
+    <meta name="description" content="学习游览两不误，玩耍也能学到知识，一价全包、家长安心。全程樱花日本游学机构老师带队、游览地导游解说，大巴接送更省心。旅游、美食、购物一应俱全，游览的自由时间随心所欲。全程入住日本高星级酒店，学员住宿安全更有保障。" />
+
+    <link rel="shortcut icon" href="/templates/main//templates/main//templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/youxue.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+	<script>
+	function OpenDialog(){
+		var url="https://chat7714.talk99.cn/chat/chat/p.do?g=10076787&md=2&c=20003150&v=2a71d5acad1e532333551fe66c9234d3e0&u=bbfc61d4a7d82c4bfc8a73c1617bcbcd5d&f=10089121";
+		window.open(url,"dooyu","fullscreen=1,scrollbars=0,status=0,width=800px,height=530px");
+	}
+	</script>
+
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="nav"></div>
+    <div id="" >
+        <div id="" class="slideBox " >
+            <div class="hd">
+                <ul>
+                    $set(viewbanner=cmd.Execute("select * from sk_banner where groupid=2  order by sortid asc ,id desc"))
+                    $set(n=0)
+                    ${foreach(item in viewbanner)}
+                    $set(n=n+1)
+                    <li>$n</li>
+                    ${end}
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    $set(viewbanner=cmd.Execute("select * from sk_banner where groupid=2  order by sortid asc ,id desc"))
+                    ${foreach(item in viewbanner)}
+                    <li>
+                        <a href="$item.linkurl" target="_blank">
+                            <img src="$item.indexpic"  style="max-width:100%;" />
+                        </a>
+                    </li>
+                    ${end}
+                </ul>
+            </div>
+            <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+            <a class="prev" href="javascript:void(0)"></a>
+            <a class="next" href="javascript:void(0)"></a>
+        </div>
+        <script type="text/javascript">
+            jQuery(".slideBox").slide({ mainCell: ".bd ul", autoPlay: true });
+        </script>
+    </div>
+    <div>
+        <img src="/templates/main/images/line01.jpg" class="" />
+    </div>
+    <div id="youxue-main">
+        <div id="youxue-main-title" class="ov">
+            <div class="wid480_flo">
+                <div class="line fr"></div>
+            </div>
+            <div class="fl title-zt">游学行程</div>
+            <div class="wid480_flo">
+                <div class="line fl"></div>
+            </div>
+        </div>
+        <div id="product">
+            <div class="productbox">
+                <ul>
+                    $set(viewlist=cmd.Execute("select * from sk_channel_article_youxue order by sort_id asc,id desc"))
+                    ${foreach(item in viewlist)}
+                    <li class="product_picbox fl">
+                        <a href="/youxue_detail/?vid=$item.id" target="_blank" />
+                        <div class="Tag_time">$item.tagtime</div>
+                        <img src="$item.img_url" width="320" height="260" class="product_pic" />
+                        </a>
+                        <p class="product_zt">$item.title</p>
+                        <p class="product_zt">报名截止时间：$cmd.DateFormat(item.endtime.ToString(),0)</p>
+                        <div class="btn_box">
+                            <input name="" type="button" class="btn01" value="立刻咨询" onclick="OpenDialog()" />
+                            <input name="" type="button" value="立刻报名" onclick="location.href = '/youxue_detail.aspx?vid=3';" class="btn02" />
+                        </div>
+                    </li>
+                   ${end}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="youshibox">
+        <div id="youshi">
+            <div id="youshi-title" class="ov">
+                <div class="wid400_flo">
+                    <div class="line fr"></div>
+                </div>
+                <div class="fl title-zt">樱花游学优势</div>
+                <div class="wid400_flo">
+                    <div class="line fl"></div>
+                </div>
+            </div>
+            <div id="icons" class="ov">
+                <div class="xuexi fl"></div>
+                <div class="laoshi fl"></div>
+                <div class="xuexiao fl"></div>
+                <div class="yule fl"></div>
+                <div class="hotel fl"></div>
+            </div>
+            <div id="youshi_adv" class="ov">
+                <div class="youshi_zt fl">学习游览两不误，玩耍也能学到知识，一价全包、家长安心</div>
+                <div class="youshi_zt fl space01">全程樱花老师带队、游览地导游解说，大巴接送更省心</div>
+                <div class="youshi_zt fl">全程樱花老师带队、游览地导游解说，大巴接送更省心</div>
+                <div class="youshi_zt fl space01">旅游、美食、购物一应俱全，游览的自由时间随心所欲</div>
+                <div class="youshi_zt fl">全程入住日本高星级酒店，学员住宿安全更有保障</div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

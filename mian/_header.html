@@ -1,0 +1,45 @@
+﻿<script type="text/javascript">
+
+var ua = navigator.userAgent;
+
+var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+
+isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+
+isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+
+isMobile = isIphone || isAndroid;
+
+//判断
+
+if(isMobile){
+	location.href="https://3g.sakurajp.com.cn";
+}else{
+	
+}
+
+</script>
+<div id="logo">
+      <div id="logo_left"><h1><a href="/"><img src="/templates/main/images/logo.jpg"  title="樱花国际日语" alt="樱花国际日语"/></a></h1></div>
+      <div id="logo_center"><span class="blk16" >   
+          ${if(modelcity.cityname=="")}
+				全国
+		  ${else}
+				$modelcity.cityname
+		  ${end}
+          </span></div>
+      <div id="logo_center1"><a href="javascript:" data-reveal-id="myModal" data-animation="fade"><img src="/templates/main/images/btn_place.jpg" class="chioce"/>
+        $Load("dialog.html")
+    </a></div>
+      <div id="logo_right">
+        <div class="icon_right">
+            <ul>
+                <li><img id="telphone" rel="nofollow" src="/templates/main/images/phone.jpg" /></li>
+                <li><img src="/templates/main/images/icon_collection.jpg" rel="nofollow" onclick="AddFavorite('/','樱花国际日语')" /></li> 
+                <li><img src="/templates/main/images/icon_chat.jpg"  rel="nofollow"/></li> 
+                <li><a href="#"  rel="nofollow" target="_blank"><img src="/templates/main/images/icon_blog.jpg"/></a></li> 
+            </ul>
+        </div>
+        <div class="code"><img src="/templates/main/images/code.jpg" /></div>
+      </div>
+</div>

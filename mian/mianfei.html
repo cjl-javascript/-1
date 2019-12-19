@@ -1,0 +1,245 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=15)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=62"))
+
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="activity">
+        <span class="blk12_h26">
+            <h3 class="left">当前位置：</h3>
+            <h3 class="left"><a href="/">首页</a> &gt; </h3>
+            <h3 class="left"><a href="/xuexifa/">学习方法</a> &gt; </h3>
+            <h3 class="left"> 申请免费课程</h3>
+            <div class="clear"></div>
+        </span>
+    </div>
+    <div class="apply">
+        <img src="/templates/main/images/banner_apply.jpg" />
+        <div class="apply_content">
+            <img src="/templates/main/images/10yue_15.jpg" /><br />
+            <div class="bg_apply">
+                <div class="bg_apply_left">
+                    <p class="pad_bot10"><img src="/templates/main/images/10yue_23.jpg" /></p>
+                    <p><span class="blk14_h24">非常便捷直接的发送电子邮件到您的电子邮箱中将带给您我们老师自己制作的新鲜，生动的内容每周都会有一个新课题。</span></p>
+                    <p><span class="blu14_h24">完全是免费的！快来申请吧~</span></p>
+                    <div class="bg_blue">
+                        <p>
+                            <span class="blk14_h30">姓名：</span>
+                            <input type="text" class="names" />
+                        </p>
+                        <p>
+                            <span class="blk14_h30">手机：</span>
+                            <input class="mbs" type="text" />
+                        </p>
+                        <p>
+                            <span class="blk14_h30">邮箱：</span>
+                            <input type="text" class="emails" />
+                        </p>
+                        <p>
+                            <span class="blk14_h30">城市：</span>
+                            <select class="citys select">
+                                <option value="" selected="">选择城市</option>
+                                <option value="上海">上海</option>
+                                <option value="杭州">杭州</option>
+                                <option value="宁波">宁波</option>
+                                <option value="苏州">苏州</option>
+                                <option value="无锡">无锡</option>
+                                <option value="南京">南京</option>
+                                <option value="南通">南通</option>
+                                <option value="昆山">昆山</option>
+                                <option value="常州">常州</option>
+                                <option value="常熟">常熟</option>
+                                <option value="扬州">扬州</option>
+                                <option value="温州">温州</option>
+                                <option value="北京">北京</option>
+                                <option value="天津">天津</option>
+                                <option value="大连">大连</option>
+                                <option value="青岛">青岛</option>
+                                <option value="广州">广州</option>
+                                <option value="深圳">深圳</option>
+                                <option value="佛山">佛山</option>
+                                <option value="福州">福州</option>
+                                <option value="厦门">厦门</option>
+                                <option value="重庆">重庆</option>
+                                <option value="成都">成都</option>
+                                <option value="合肥">合肥</option>
+                                <option value="武汉">武汉</option>
+                                <option value="济南">济南</option>
+                                <option value="长沙">长沙</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </p>
+                        <p><input name="" type="button" class="btn_apply" id="btnSubmit1" value="立刻获取每周日语" /></p>
+                    </div>
+                    <p class="blk12_h26">* 我们将保护您的信息安全　* 请正确填写信息</p>
+                </div>
+                <div class="bg_apply_right">
+                    <p class="pad_bot10"><img src="/templates/main/images/10yue_25.jpg" /></p>
+                    <div class="icon_apply">
+                        <ul>
+                            <li class="wid150">
+                                <img src="/templates/main/images/10yue_30.jpg"><br />
+                                <span class="blu14_h24">五十音图演练</span><br />
+                                <span class="blk14_h24">免费的动态入门课程<br />帮助您走好第一步</span>
+                            </li>
+                            <li>
+                                <img src="/templates/main/images/10yue_32.jpg"><br />
+                                <span class="blu14_h24">每日单词速记</span><br />
+                                <span class="blk14_h24">更新更有趣的日语关键词<br />知道什么叫”水壶男”吗?</span>
+                            </li>
+                            <li class="bor_hid">
+                                <img src="/templates/main/images/10yue_34.jpg"><br />
+                                <span class="blu14_h24">日本速写链接</span><br />
+                                <span class="blk14_h24">职业规划/留学指引/文化鉴赏<br />除了日语,我们还给您更多</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg_text">免费注册,提高日语的同时享受乐趣　　　每天只要10分钟,现在就注册吧!</div>
+                </div>
+            </div>
+            <img src="/templates/main/images/10yue_53.jpg" /><br />
+            <div class="bg_apply">
+                <div class="left01">
+                    <img src="/templates/main/images/10yue_61.jpg" /><br />
+                    <div class="bg_gry">
+                        丹野老师太不可思议了。他非常耐心，并把课堂气氛搞得很愉快。而且对于如何引导学员,有着非同一般的经验让我自信的开口说日语。 <br />  ——人民广场中心学员
+                    </div>
+                </div>
+                <div class="left02">
+                    <p class="pad_bot10"><img src="/templates/main/images/10yue_58.jpg" /></p>
+                    <div class="list_apply">
+                        <div class="left"><img src="/templates/main/images/10yue_72.jpg" /></div>
+                        <div class="mar_lef10"><span class="blu14">优秀的教师</span><br /><span class="blk14">不超过4人的外教小班</span></div>
+                    </div>
+                    <div class="list_apply">
+                        <div class="left"><img src="/templates/main/images/10yue_80.jpg" /></div>
+                        <div class="mar_lef10"><span class="blu14">更多的便捷</span><br /><span class="blk14">随时学习的自由时间</span></div>
+                    </div>
+                    <div class="list_apply">
+                        <div class="left"><img src="/templates/main/images/10yue_83.jpg" /></div>
+                        <div class="mar_lef10"><span class="blu14">樱花俱乐部</span><br /><span class="blk14">沙龙,试映,职业,留学</span></div>
+                    </div>
+                </div>
+                <div class="left03">
+                    <p class="pad_bot10"><img src="/templates/main/images/10yue_64.jpg" /></p>
+                    <p><img src="/templates/main/images/icon_tel.gif" />　<span class="red14B">立刻拨打4001-800-111 </span><span class="blk14_h24">获取您的个人日语学习规划机会</span></p>
+                    <p class="blu14_h24">或者在线预约，我们会在24小时以内和您联系</p>
+                    <div class="bg_blue">
+                        <p>
+                            <span class="blk14_h30">姓名：</span>
+                            <input type="text" id="names" />
+                        </p>
+                        <p>
+                            <span class="blk14_h30">手机：</span>
+                            <input name="" type="text" id="mbs" />
+                        </p>
+                        <p>
+                            <span class="blk14_h30">邮箱：</span>
+                            <input type="text" id="emails" />
+                        </p>
+                        <p>
+                            <span class="blk14_h30">城市：</span>
+                            <select class="citys select" id="citys">
+                                <option value="" selected="">选择城市</option>
+                                <option value="上海">上海</option>
+                                <option value="杭州">杭州</option>
+                                <option value="宁波">宁波</option>
+                                <option value="苏州">苏州</option>
+                                <option value="无锡">无锡</option>
+                                <option value="南京">南京</option>
+                                <option value="南通">南通</option>
+                                <option value="昆山">昆山</option>
+                                <option value="常州">常州</option>
+                                <option value="常熟">常熟</option>
+                                <option value="扬州">扬州</option>
+                                <option value="温州">温州</option>
+                                <option value="北京">北京</option>
+                                <option value="天津">天津</option>
+                                <option value="大连">大连</option>
+                                <option value="青岛">青岛</option>
+                                <option value="广州">广州</option>
+                                <option value="深圳">深圳</option>
+                                <option value="佛山">佛山</option>
+                                <option value="福州">福州</option>
+                                <option value="厦门">厦门</option>
+                                <option value="重庆">重庆</option>
+                                <option value="成都">成都</option>
+                                <option value="合肥">合肥</option>
+                                <option value="武汉">武汉</option>
+                                <option value="济南">济南</option>
+                                <option value="长沙">长沙</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </p>
+                        <p><input name="" type="button" id="btnSubmit2" class="btn_apply" value="获取个人咨询" /></p>
+                    </div>
+                    <p class="blk12_h26">* 我们将会让专业顾问给您合理的建议　* 我们将保护您的信息安全</p>
+                </div>
+            </div>
+            <p class="pad10_mar400"><img src="/templates/main/images/10yue_113.jpg" /></p>
+        </div>
+       <!-- <div class="bg_blk">
+          
+            <p class="mar_rig50"><img src="/templates/main/images/logo.gif" /></p>
+            <p class="martop10_marbot10"><img src="/templates/main/images/pic_tel.gif" /></p>
+            <p>
+                上海中心：　021-54891288　　
+                北京中心： 010-58697588　　
+                杭州中心：0571-28115566　　
+                宁波中心：0574-87008707　　<br />
+                苏州中心： 0512-65812242　　
+                无锡中心：0510-81028855　　
+                大连中心：0411-82313266　　
+                青岛中心：0532-85790777　　<br />
+                广州中心：　020-38267626　　
+                深圳中心：0755-88840801　　
+                天津中心： 022-23170020　　
+                重庆中心： 023-63802885　　<br />
+                南京中心：　025-84701522　　
+                南通中心：0513-85112420
+            </p>
+        </div> -->
+    </div>
+
+    
+   <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

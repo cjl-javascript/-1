@@ -1,0 +1,146 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=15)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=60"))
+
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+
+
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>  <h3 class="left"> <a href="/kecheng/">学习课程</a> &gt;</h3> <h3 class="left"> 学习效果保障</h3>
+                        <div class="clear"></div>
+                    </span>
+                </div>
+                <div id="detail">
+                    <p><span class="blk14_h30">　</span><span class="red14_h30">樱花国际日语</span><span class="blk14_h30">是新世界教育旗下最重要的品牌之一，也是目前国内唯一提供高端日语培训课程的机构，基本垄断了国内高端日语培训领域。独创的多维学习法配合自主研发的多媒体学习模式，你就会知道我们是多么用心，让您得日语学习如此轻松而有效率。我们也正在不懈的升级与完善自我，帮助学员加快语言学习，取得100%的学习效果。“独特的多维学习法——多媒体基础课——日式小班课——实景强化拓展课——日本文化课——”的每一个环节都是相辅相成的，最终促成你自信且自然地说一口流利日语。<br /></span></p>
+                    <p><span class="span_fs85pt">&nbsp;&nbsp; </span><span class="span_fs14">东京实地学习保障学习品质</span></p>
+                    <p><span class="fs14_rgb102">和其他众多日语培训机构不同的是，樱花国际日语鼓励让学员到更广大的世界舞台上去探索和发现。当您在樱花国际日语学习到一定的语言基础后，我们将安排您去往梦想之地----日本东京，在樱花的日本东京分校，体验当地生活状态，在生活中学习，在学习中生活</span></p>
+                    <p><span class="font14">　</span><span class="blk14_h30">长期以来的实践证明，樱花国际日语的教学模式彻底摆脱了传统语言学习的枯燥感，帮助学员在获得日本语言技能的同时告别哑巴日语的尴尬。</span><span class="red14_h30">超过100万学员的体验证实，樱花国际日语是您身边的卓越日语培训专家，给予了中国人学日语的全新解决方案。</span><br /></p>
+                    <div class="line">
+                    </div>
+                    <p>
+                        <span class="red16B">保证100%成功的学习效果</span><br /><span class="red14_h30">☆ 100% 便捷</span><span class="blk14_h30"><br />每日免费试听课, 随时随地学习, 繁忙人士首选;<br /></span>
+                    </p>
+                    <div class="line">
+                    </div>
+                    <p>
+                        <span class="red16B">完善的学习进度管理</span><span>&nbsp;</span><br /><span class="blk14_h30">我们认为学习一门新的语言需要坚持不懈的努力。我们的学习进度管理系统将帮助你度过每一次难关:<br /></span><span class="red14_h30">? 私人学习顾问：</span><span class="blk14_h30">你的私人学习顾问会伴随你度过学习过程的每一个阶段，帮助你解答问题，指导你保持正常的学习进度。<br /></span>
+                    </p>
+                    <div class="line"></div>
+                    <p>
+                        <span>　　</span><span class="blk14_h30">为了保障你在樱花国际日语的学习效果，樱花国际日语为您免费提供 日语免费试听体验和专业1对1课程顾问服务。</span><span class="red14_h30">想要知道我们如何为你保障学习效果吗？快来与我们的专业课程顾问一对一交流吧!</span><span>&nbsp;</span><br />
+                    </p>
+                </div>
+            </div>
+            <div id="about_parnter">
+                <span class="red16B">企业合作伙伴</span><br /><br />
+                <ul>
+
+                    <li><img alt='松下' src="/templates/main/images/201504030240072453.gif" /></li>
+
+                    <li><img alt='亦竹' src="/templates/main/images/201504030240245701.gif" /></li>
+
+                    <li><img alt='三菱' src="/templates/main/images/201504030240518018.gif" /></li>
+
+                    <li><img alt='Kanebo' src="/templates/main/images/201504030241155186.gif" /></li>
+
+                    <li><img alt='卡西欧' src="/templates/main/images/201504030241351465.gif" /></li>
+
+                    <li><img alt='佳能' src="/templates/main/images/201504030241528384.gif" /></li>
+
+                    <li><img alt='妮飘' src="/templates/main/images/201504030242171714.gif" /></li>
+
+                    <li><img alt='夏普' src="/templates/main/images/201504030242372902.gif" /></li>
+
+                    <li><img alt='美合利' src="/templates/main/images/201504030243081282.gif" /></li>
+
+                    <li><img alt='jpseek.com' src="/templates/main/images/201504030243275983.gif" /></li>
+
+                    <li><img alt='avexa' src="/templates/main/images/201504030243495742.gif" /></li>
+
+                    <li><img alt='NEC' src="/templates/main/images/201504030244048118.gif" /></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>$model.title</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

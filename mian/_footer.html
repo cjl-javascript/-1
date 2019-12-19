@@ -1,0 +1,52 @@
+<div class="hotCitys">
+    <div class="listfreenlink2">
+        <ul>
+            <li>热门城市:</li>
+            $set(city=cmd.Execute("select id,cityname,citycode from sk_city where parentid=0 and islock=1 order by sortid asc"))
+            $foreach(item in city)
+            <li><h3><a href="/-$item.citycode/" target="_blank">$item.cityname</a></h3></li>
+            $end
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<br />
+<div id="footer">
+    <del class="links">
+        <ul id="menu2">
+            <li><a href="/zongzhi/" target="_blank" rel="nofollow">关于我们</a></li>
+            <li><a href="/hezuo.html" rel="nofollow">合作办学</a></li>
+            <li><a href="/policy.html " rel="nofollow">隐私条款</a></li>
+            <li><a href="/yinghuaguojiriyu/" rel="nofollow">联系我们</a></li>
+            <li><a href="/baike/" target="_blank">樱花百科</a></li>
+            <li><a href="/zixun/" target="_blank">樱花资讯</a></li>
+            <li><a href="/question/" target="_blank">樱花问答</a></li>
+            <li><font>&nbsp&nbsp 投诉热线：400-881-8661</font></li>
+        </ul>
+    </del>
+	<!-- <span>$site.copyright</span> -->
+	<span>Copyright © 2006 by 上海日樱管理咨询有限公司</span>
+    <span>Sakura International Japanese .Allright Reserved $site.crod</span>
+    <a class="beizhu" href="#" target="_blank"><img src="/templates/main/images/beian.png" />沪公网安备 31010102003839号</a>
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a51d35ab14ba2aaea5840160df8c868";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+$set(str=cmd.GetCookie("cityid"))
+
+$if(str=="quanguo")
+  $set(modelcity=cmd.GetCityModel("shanghai"))
+ $config.webcountcode
+ $modelcity.jshtml
+$else
+$config.webcountcode
+$modelcity.jshtml
+$end

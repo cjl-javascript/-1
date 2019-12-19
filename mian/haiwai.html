@@ -1,0 +1,108 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(channel_id=17)
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=85"))
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+    <link rel="shortcut icon" href="/templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3>  <h3 class="left"> <a href="/xuexifa/">学习方法</a> &gt;</h3> <h3 class="left"> 海外课程和文化体验</h3>
+                        <div class="clear"></div>
+                    </span>
+
+                </div>
+                <div id="detail">
+                    <div id="learn">
+                        <table><tbody><tr><td class="wid200"><img src="/templates/main/images/eb1f3f90-fe19-4ae3-9226-aa294e4d70c9.jpg" /></td><td><span class="span_lh50"><strong>东京实地学习</strong></span><br /><span class="blk14_h30">　和其他众多日语培训机构不同的是，樱花国际日语鼓励让学员到更广大的世界舞台上去探索和发现。当您在樱花国际日语学习到一定的语言基础后，我们将安排您去往梦想之地----日本东京，在樱花的日本东京分校，体验当地生活状态，在生活中学习，在学习中生活。</span></td></tr></tbody></table>
+                    </div>
+                    <div id="learn">
+                        <table><tbody><tr><td><span class="span_lh50"><strong>为数不多拥有日本分校的培训机构</strong></span><br /><span class="blk14_h30">　樱花国际日语在日本东京的护国寺地区，开设了樱花东京分校，我们也是国内为数不多的在日本和中国同时拥有自己学校的日语培训结构之一。在日本当地我们有在驻的辅导带队教师，有资深教学经验的日籍教师授课，同时保证教学质量和学员生活便利。</span></td><td class="wid200"><img src="/templates/main/images/7e1e87b8-a267-408f-8aaa-656161676336.jpg" /></td></tr></tbody></table>
+                    </div>
+                    <div id="learn">
+                        <table><tbody><tr><td class="wid200"><img src="/templates/main/images/45443c76-60a1-4a02-8e5e-d6c1e5d297d5.jpg" /></td><td><span class="span_lh50"><strong>丰富多元的文化体验</strong></span><br /><span class="blk14_h30">　在日本期间，学校会组织大家游览各种名胜景点，同时安排花道、茶道、剑道、空手道等原汁原味的日本文化体验，当然更少不了新兴潮流的动漫偶像圣地巡礼。</span></td></tr></tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>$model.title</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+
+
+
+
+
+</body>
+</html>
+${end}

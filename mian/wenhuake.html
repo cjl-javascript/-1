@@ -1,0 +1,143 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+$set(channel_id=17)
+$set(model=cmd.GetCateModel(" channel_id="+channel_id+" and id=71"))
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${model.seo_title}——樱花国际日语</title>
+    <meta name="keywords" content="${model.seo_keywords}" />
+    <meta name="description" content="${model.seo_description}" />
+
+    <link rel="shortcut icon" href="/templates/main//templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">
+                        <h3 class="left">当前位置：</h3>
+                        <h3 class="left"><a href="/">首页</a> &gt; </h3> 
+                         <h3 class="left"> <a href="/xuexifa/">学习方法</a> &gt;</h3>
+                         <h3 class="left"> 日本文化课</h3>
+                        <div class="clear"></div>
+                    </span>
+
+                </div>
+                <div id="detail">
+                    <p>
+                        <span class="red16B">全方位接触日本文化，更好的学习日语</span><br />
+                        <span class="blk14_h30">　　在整个流程中，您随时可以预约日本文化课。体验</span>
+                        <span class="red14_h30">花道，茶道，剑道，空手道</span>
+                        <span class="blk14_h30">等原味日本文化。同时还能参与</span>
+                        <span class="red14_h30">日剧鉴赏，动漫赏析</span>
+                        <span class="blk14_h30">等主题活动，全方位接触日本文化，更好的学习日语。&nbsp;</span><br /><br />
+                    </p>
+                    <div id="culture" style="clear: both; width: 700px; margin-bottom: 15px; vertical-align: middle; padding: 20px 15px 20px 30px; font-family: 微软雅黑;font-size:16px; background-color: rgb(253, 239, 245);">
+                        <div class="culture_pic" style="float: left; width: 230px; padding-left: 0px;">
+                            <img src="/templates/main/images/201504160721472495.jpg" alt="" />
+                        </div>
+                        <span class="red14B" style="font-size: 14px; font-family: 微软雅黑, Times, serif; line-height: 30px; color: rgb(236, 0, 140); font-weight: bold;">日剧鉴赏</span><br />
+                        <span class="blk14_h30" style="font-size: 14px; font-family: 微软雅黑, Times, serif; line-height: 30px; color: rgb(102, 102, 102);">　　无可否认，日剧是能够充分体现日本各个阶层和时代背景的一种文化内容。所以樱花国际日语为各位学员准备了丰富的日剧鉴赏课程，让学员能够充分的体味日本的社会形态，社交礼仪。同时樱花国际日语的专业教师会在旁和学员充分的讲解相关内容，帮助学员充分学习日语。</span>
+                    </div>
+                    <div id="culture">
+                        <div class="culture_pic_1">
+                            <img src="/templates/main/images/201504160722127927.jpg" alt="" />
+                        </div>
+                        <span class="red14B">花　道</span><br />
+                        <span class="blk14_h30">　　日本的花道，世界闻名，是一种很迷人的艺术。在日本，处处可以见到这种艺术杰作。几乎到处都有一盆盆，一瓶瓶色彩艳丽，婀娜多姿的插花。<br />　　“花道”，也叫做“华道”，“插花”，就是把剪下的树枝或花草经过艺术加工，放入容器中，使之更绚丽的一种技术。因为是使用活的，新鲜的树枝或者花草加工，加工后放上清水可保留几天，所以又叫“生花”。<br />　　日本的插花艺术有着悠久的历史，然而花道最早的起源却是中国佛教的供花。奈良时代佛教传到日本，佛前供花的习惯也随之传到日本。平安时代供花逐渐演变成供人们欣赏的插花艺术，直到十五世纪末才出现花道的专门艺术家，花道艺术开始形成。花道艺术之所以能普及和流行，而且受到日本各方面的重视，据说主要原因是因为“日本人对自然的一种心情”。日本人民自古以来就热爱大自然。他们甚至对一朵花，也要研究它的来龙去脉，观察它的形状姿态，喜爱它的千娇百媚。这种深刻重视植物，甚至和植物心心相应的日本人特有精神，是发展花道艺术的最主要原因。</span>
+                    </div>
+                    <div id="culture">
+                        <div class="culture_pic">
+                            <img src="/templates/main/images/20150416072228634.jpg" alt="" />
+                        </div>
+                        <span class="red14B">剑　道</span><br />
+                        <span class="blk14_h30">　　源于中国的剑术，在隋、唐时期传入日本,经日本人的研习修改,形成独特的刀法技术，古时用来保家卫国、防御外敌和维护社会秩序,现今才渐渐成为一项武术运动，改用竹刀、穿著护具对打。</span>
+                    </div>
+                    <div id="culture">
+                        <div class="culture_pic_1">
+                            <img src="/templates/main/images/20150416072237103.jpg" alt="" />
+                        </div>
+                        <span class="red14B">茶　道</span><br />
+                        <span class="blk14_h30">　　日本茶道是室内传统艺术、这种茶是在与日常生活完全隔绝的特殊场所，在特定的时间内举行的艺术仪式，必须通过极其繁琐的手续，使用特定的手法才能完成。<br />　　除了讲究特殊的手法以外，日本茶道还强调人与人之间的联系。日本茶道的茶不是个人的茶，而是集体的、大家共有的。茶道的核心便是茶的聚会。所有参加茶会的与会者通过茶通的途径，都可以摆脱现实社会的制约，使人与人之间的关系从内心深处变得融洽起来。<br />　　日本的茶道包括一种精神主义，即强调清、静、和、寂。在茶道的历史上，有不少重名的人，为求心之道花费了一生的时间。茶道正是建立在与世隔绝的基础上的。所以它很自然地追求一种独特的精神境地作为自己的奋斗目标，即所谓的求道性。<br />　　与此同时，茶道也具备趣味性，具有游乐的性质。当然不排除一些人是出于娱乐的目的参加茶道仪式的。实际上，茶道的求道性与趣味性并不矛盾，它们同时并存于茶道中。</span>
+                    </div>
+                    <div id="culture">
+                        <div class="culture_pic">
+                            <img src="/templates/main/images/201504160722429256.jpg" alt="" />
+                        </div>
+                        <span class="red14B">空手道</span><br />
+                        <span class="blk14_h30">　　由距今五百年前的古老格斗术和中国传入日本的拳法揉合而成的。手道是世界推崇的全民健身体育。可以锻炼人的外在肌体，可以让人具备内在自我控制的意志及崇高的精神信念，具备果断、勇敢、大度、博爱、自信、机智、冷静等个人优秀品质。<br />　　空手道起源于中国盛唐时期，由日本武道传播者带回日本，将其完善。它原称&quot;唐手&quot;，因日文读音与&quot;空手道&quot;谐同，现代空手道继承了实用性、观赏性的特点，屏弃现代中国武术纯观赏为主而忽视实用性的特点。</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame">
+                <div id="menu">
+                    <h3 class="subtitle"><span>$model.title</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}

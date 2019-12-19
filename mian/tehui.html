@@ -1,0 +1,195 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")) )
+    $set(cityid=cmd.GetCityId(citycode))
+$else
+    $set(cityid=cmd.GetCityId(cmd.GetCookie("cityid")))
+$end
+$set(channel_id=19)
+
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>日语培训联合活动——樱花国际日语</title>
+    <meta name="keywords" content="日语培训联合活动，樱花国际日语" />
+    <meta name="description" content="日语活动地带每天都有不同的主题活动，由一位日教或知名日本企业人员主持，在中心内或户外举行，就像一个日语角，主要致力于营造轻松休闲的日语环境，又让你了解日益更新的日本经济、生活信息，促使你用日语讨论各种话题，从最新的日本偶像剧谈到城市里的最新游园会，或在一家日本料理店畅饮欢聊，亦或学习日本礼仪。" />
+    <link rel="shortcut icon" href="/templates/main/favicon.ico" />
+    <link href="../../Content/css/pagination.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/photo-info.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.galleryview-3.0-dev.js"></script>
+    <link type="text/css" rel="stylesheet" href="/templates/main/css/jquery.galleryview-3.0-dev.css" />
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+    <div id="activity">
+        <span class="blk12_h26">
+            <h3 class="left">当前位置：</h3>
+            <h3 class="left"><a href="/">首页</a> &gt; </h3> 
+             <h3 class="left"> 特惠活动</h3>
+            <div class="clear"></div>
+        </span>
+        <div id="activity_left">
+            <span class="red16B">樱花品牌联合活动</span>
+            <div class="blk14_h30" id="content_in">　　
+            日语活动地带每天都有不同的主题活动，由一位日教或知名日本企业人员主持，在中心内或户外举行，
+            就像一个日语角，主要致力于营造轻松休闲的日语环境，又让你了解日益更新的日本经济、生活信息，促使你用日语讨论各种话题，
+            从最新的日本偶像剧谈到城市里的最新游园会，或在一家日本料理店畅饮欢聊，亦或学习日本礼仪。
+            <a href="#" class="red14_h30">快快加入樱花日语大家庭，感受轻松学日语的乐趣>>
+                </a></div>
+            <div id="act_title">本月精彩活动</div>
+            <div id="list" style="display:none">
+                <div id="list_pro_on">
+                    <div id="list_left"><img src="/templates/main/201612250318071323.png" /></div>
+                    <div id="list_right">
+                        <div id="list_title"><a href="javascript:">日本の昔話し</a></div>
+                        <div id="detail_1"><span>共<font></font>名额</span><span><font></font>人申请</span></div>
+                        <span>活动时间：1月15日  15:00-16:00</span>
+                        <span>活动地点：石家庄校区</span>
+                        <font class="font_pad50">合作品牌：</font>
+                        <div id="list_btn3"><img src="/templates/main/btn3.jpg" alt="" /></div>
+                        <div id="list_btn2" class="Dialog" onclick="Diloag('日本の昔話し',450,430,'/templates/main/DiloagRegister.html')"><img class="img_cursor" src="/templates/main/btn2.jpg" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wid750_pad13">
+				
+				$if(cityid==0)
+					$set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 "," id desc"))
+                $elseif(cityid==82)
+					$set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 and cityid=22"," id desc"))
+                $elseif(cityid==80)
+					$set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 and cityid=17"," id desc"))
+				$elseif(cityid==79)
+					$set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 and cityid=6"," id desc"))
+				$elseif(cityid==81)
+					$set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 and cityid=4"," id desc"))
+				$elseif(cityid==78)
+					$set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 and cityid=7"," id desc"))
+				$else
+                    $set(datalist=cmd.Get_Page_List(15,"sk_channel_article_tehui","  channel_id=19 and category_id=64 and cityid='"+cityid+"' " ," id desc"))
+                $end
+
+                ${foreach(item in datalist)}
+                <div class="frame">
+                    <div class="wrap">
+                        <img src="$item.img_url" width="207" height="168" />
+                        <div>
+                            <span>
+                                <h1>$item.title</h1>
+                                <p><a href="javascript:void(0)" onclick="Diloag('$item.title', 450, 430, '/templates/main/DiloagRegister.html')">
+                                    <img src="/templates/main/images/btn.png" /></a>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="time">时间：$item.acttime</div>
+                    <div class="map">地点：$item.address</div>
+                </div>
+                ${end}
+
+
+            </div>
+            <span><a href="#" class="blk14_h30">商家入口 > </a><a href="#" class="red14_h30">申请加入樱花国际日语品牌活动</a></span>
+            <div class="right">
+                <div class="pink">
+					$if(cityid==0)
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 ","/tehui/?page=__id__")
+					$elseif(cityid==82)
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 and cityid=22","/tehui/?page=__id__")
+					$elseif(cityid==80)
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 and cityid=17","/tehui/?page=__id__")
+					$elseif(cityid==79)
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 and cityid=6","/tehui/?page=__id__")
+					$elseif(cityid==81)
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 and cityid=4","/tehui/?page=__id__")
+					$elseif(cityid==78)
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 and cityid=7","/tehui/?page=__id__")
+					$else
+						$cmd.OutPageList(15,"sk_channel_article_tehui"," channel_id=19 and category_id=64 and cityid='"+cityid+"'","/tehui/?page=__id__")
+					$end
+				</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="frame_1">
+            <div id="menu">
+                <h3 class="subtitle"><span>$model.title</span></h3>
+                <ul>
+                    ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                    ${foreach(item in catelist)}
+                    $if(model.id==item.id)
+                    <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                    $else
+                    <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                    $end
+                    ${end}
+                </ul>
+            </div>
+        </div>
+        <div id="activity_right">
+            <div id="activity_title">
+                <span>推荐活动</span>
+                <img src="/templates/main/images/activity_right_fgx.jpg" />
+            </div>
+            <ul>
+				$if(cityid==0)
+				$set(list2=cmd.Execute("select  top 15 * from( select distinct(title) from  sk_channel_article_tehui where   channel_id="+channel_id+" and category_id=64  ) as t "))
+				$else
+                $set(list2=cmd.Execute("select  top 15 * from (select distinct(title) from sk_channel_article_tehui where   channel_id="+channel_id+" and category_id=64 and cityid="+cityid+" )  as t "))
+                $end
+				$set(i=0)
+				${foreach(item in list2)}
+                $set(i=i+1)
+				<li><a href="javascript:" onclick="Diloag('$item.title', 450, 430, '/templates/main/DiloagRegister.html')" class="blk12_h22">$i、$item.title</a></li>
+                ${end}
+
+            </ul>
+            <div id="activity_title">
+                <span>最新活动</span>
+                <img src="/templates/main/images/activity_right_fgx.jpg" />
+            </div>
+            <ul>
+                $set(list=cmd.Execute(" select top 15 * from (select distinct(title) from sk_channel_article_tehui where   channel_id="+channel_id+" and category_id=64 ) as t "))
+                $set(n=0)
+                ${foreach(item in list)}
+                $set(n=n+1)
+                <li><a href="javascript:" onclick="Diloag('$item.title', 450, 430, '/templates/main/DiloagRegister.html')" class="blk12_h22">${n} 、 $item.title</a></li>
+                ${end}
+                
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+﻿$set(citycode=cmd.QueryString("cityid","quanguo"))
+$set(cityid=cmd.GetCityId(citycode))
+$set(channel_id=18)
+
+$if(cmd.IsNullOrEmpty(cmd.GetCookie("cityid")))
+     $set(modelcity=cmd.GetCityModel(citycode))
+$else
+    $set(modelcity=cmd.GetCityModel(cmd.GetCookie("cityid")))
+$end
+${if(cmd.IsNullOrEmpty(model))}
+<h1>此栏目不存在！</h1>
+${else}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>樱花学员——樱花国际日语</title>
+    <meta name="keywords" content="樱花学员，樱花国际日语" />
+    <meta name="description" content="樱花国际日语全国校区每周组织学员，共同参与日本相关文化、习俗、知识和美食等等的校区活动，由樱花外教老师授课。在课上，学员们能够体验多才多艺、风趣幽默的樱花外教风采，更能学会一些日式物品的工艺，日本料理的制作，了解更多有关日本人生活和工作的只是。" />
+    <link rel="shortcut icon" href="/templates/main//templates/main//templates/main/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/word.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/jiathis_share.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/inside.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/main/css/sakura.css" />
+    <script type="text/javascript" src="/templates/main/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/main/layer/layer.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="/templates/main/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/templates/main/js/common.js"></script>
+</head>
+<body>
+    $Load("dialog.html")
+    <div id="top">
+        $Load("_header.html")
+        <div id="nav">
+            $Load("_Navigation.html")
+        </div>
+    </div>
+
+    <div id="inside">
+        <div id="inside_left">
+            <div id="pic"><img alt="" src="/templates/main/images/201505150511299579.jpg" /> </div>
+            <div id="content">
+                <div class="column">
+                    <div id="ckepop">
+                        <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+                        <a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+                        <a class="jiathis_button_kaixin001" title="分享到开心网"><span class="jiathis_txt jtico jtico_kaixin001"></span></a>
+                        <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+                        <a href="#" rel="nofollow" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"><span id="more_lh18" class="blk12_h22">更多</span></a>
+                    </div>
+                    <span class="blk12_h26">当前位置：<a href="/">首页</a>&gt  樱花学员</span>
+                </div>
+                <div id="detail" class="wid_100">
+                    <div id="detail">
+                        <div id="learn">
+                            <span class="red16B">学员参与活动</span>
+                            <br />&nbsp; &nbsp; &nbsp; &nbsp;
+                            <p>
+                                <span class="blk14_h30">　　樱花国际日语全国校区每周组织学员，共同参与日本相关文化、习俗、知识和美食等等的校区活动，由樱花外教老师授课。在课上，学员们能够体验多才多艺、风趣幽默的樱花外教风采，更能学会一些日式物品的工艺，日本料理的制作，了解更多有关日本人生活和工作的知识。
+                                <a href="#" target="_self"><span class="jiaru">快快加入樱花国际日语大家庭，感受轻松学日语的乐趣&gt;&gt;</span></a>
+                                </span>
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                            </p>
+                        </div>
+                        <div id="jwplayer" style="background: transparent !important; margin:0 auto; width:720px; height:540px; overflow:hidden;"><div id="player_wrapper" style="position: relative; width: 720px; height: 540px;"><object type="application/x-shockwave-flash" data="/template/all/jwplayer/player.swf" width="100%" height="100%" bgcolor="#000000" id="player" name="player" tabindex="0"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="always"><param name="seamlesstabbing" value="true"><param name="wmode" value="opaque"><param name="flashvars" value="netstreambasepath=http%3A%2F%2Fwww.sakurajp.com.cn%2Fxueyuan%2F&amp;id=player&amp;skin=http%3A%2F%2Fwww.sakurajp.com.cn%2Ftemplate%2Fall%2Fjwplayer%2Fglow.zip&amp;stretching=fill&amp;image=http%3A%2F%2Fwww.sakurajp.com.cn%2Ftemplate%2Fall%2Fvideo%2Ftestvideo.jpg&amp;autostart=false&amp;levels=%5B%5BJSON%5D%5D%5B%7B%22file%22%3A%22http%3A%2F%2Fwww.sakurajp.com.cn%2Ftemplate%2Fall%2Fvideo%2Fyhgjry.flv%22%7D%5D&amp;controlbar.position=over"></object></div></div>
+                        <p>
+                            &nbsp;&nbsp;<span class="xueyuan">樱花学员在日本</span>&nbsp; &nbsp;
+                        </p>
+                        <p>
+                            &nbsp; &nbsp;<span class="fs14_lh30_col59">樱花学员，通过丰富多彩的赴日游学课，在日本游玩、住宿、体验购物，深入日语原生环境，学习地道和纯正日语。</span>&nbsp; &nbsp;
+                        </p>
+                        <p>
+                            &nbsp; &nbsp;<span class="fs14_lh30_col59">他们在日本生活和学习，短短几天，和樱花老师以及其他学员关系亲密，亲如家人</span>&nbsp; &nbsp;
+                        </p>
+                        <p>
+                            <span class="fs14_lh30_col59"><br /></span>&nbsp; &nbsp;
+                        </p>
+                        <p>
+                            &nbsp; &nbsp;&nbsp;<img src="/templates/main/images/bc8c389b-b630-4647-b0c2-09d88879861c.jpg" class="wid220_he153" />&nbsp;<img src="/templates/main/images/95e5508d-622a-45cb-a855-2005436008e4.jpg" class="wid203_he153" /> <img src="/templates/main/images/58b3baad-5235-4017-a337-d65681a81fff.jpg" class="wid197_he153" />&nbsp; &nbsp;
+                        </p>
+                        <p>
+                            &nbsp; &nbsp;&nbsp;<img src="/templates/main/images/e197d149-4224-4739-83dc-c6caf74dcc10.jpg" class="wid220_he153" />&nbsp;<img src="/templates/main/images/bf376205-3881-4b67-9144-f27b3fd51295.jpg" class="wid203_he153" />&nbsp;<img src="/templates/main/images/5421c8ce-a0ad-4a96-8fc0-f99b006c508a.jpg" class="wid197_he153" />&nbsp; &nbsp;
+                        </p>
+                        <p>
+                            &nbsp; &nbsp;&nbsp;<img src="/templates/main/images/461f1c4d-9388-414c-a61f-73df6ed0d8e0.jpg" class="wid220_he153" />&nbsp;<img src="/templates/main/images/ea7b4bb4-9015-411c-9f5c-8bb9929bfe33.jpg" class="wid203_he153" />&nbsp;<img src="/templates/main/images/7656371d-7645-4393-b485-8a298c105e6b.jpg" class="wid197_he153" />&nbsp; &nbsp;
+                        </p>
+                        <div id="picture" style="width: 700px; overflow: hidden; padding-left: 25px; font-family: 微软雅黑;font-size:16px;">
+                            <ul style="list-style: none; padding: 0px; margin: 0px;">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="inside_right">
+            <div id="login_1">
+                <div id="login_top"><img src="/templates/main/images/pic_login.jpg" /></div>
+                $load("regiser.html")
+            </div>
+            <div id="frame" style="display:none;">
+                <div id="menu">
+                    <h3 class="subtitle"><span>$mode.title</span></h3>
+                    <ul>
+                        ${catelist=cmd.Execute("select id,title,call_index from sk_article_category where channel_id="+channel_id)}
+                        ${foreach(item in catelist)}
+                        $if(model.id==item.id)
+                        <li><a class="hover" href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $else
+                        <li><a href="/${item.call_index}/" rel="nofollow">${item.title}</a></li>
+                        $end
+                        ${end}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+    $load("_footer.html")
+
+</body>
+</html>
+${end}
