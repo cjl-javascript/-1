@@ -135,7 +135,7 @@ input:checked + span b {
 }
 .pic5 .froms {
   width: 10.92rem;
-  padding-top: 0.48rem;
+  padding-top: 0.18rem;
   position: absolute;
   left: 50%;
   margin-left: -5.46rem;
@@ -166,7 +166,7 @@ input:checked + span b {
   outline: none;
   color: #fff;
 }
-.pic5 .froms div {
+/* .pic5 .froms div {
   background-color: #363435;
   height: 1.56rem;
   width: 100%;
@@ -178,7 +178,70 @@ input:checked + span b {
   line-height: 1.56rem;
   text-align: center;
   font-size: 0.4rem;
-}
+} */
 body {
   overflow: scroll !important;
+}
+/* 修改的部分 */
+.wap-register-input{
+  float:left;
+  height: 1.3rem;
+  width: 100%;
+  background-color: #e17717;
+  font-size: 0.44rem;
+  line-height: 1.4rem;
+  border: 1px solid rgba(168, 82, 4, 0.3);
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  text-shadow: 0 0 100px #a83404;
+  padding: 0 0.44rem;
+  box-shadow: 0.04rem 0.04rem 0 #ffcb68, 2px 2px 0.3rem #cf560c inset
+}
+
+.fl{
+  float:left;
+  width:50%;
+}
+.fr{
+  float:right;
+  width:40%;
+  background-color: #363435;
+  height: 1.3rem;
+  
+  color: #fff;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  box-shadow: 0 2px 0 #fff inset;
+  border-radius: 0.3rem;
+  line-height: 1.3rem;
+  text-align: center;
+  font-size: 0.4rem;
+}
+.wapBtn{
+  float:left;
+  background-color: #363435;
+  height: 1.3rem;
+  width: 100%;
+  color: #fff;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  box-shadow: 0 2px 0 #fff inset;
+  border-radius: 0.3rem;
+  line-height: 1.3rem;
+  text-align: center;
+  font-size: 0.4rem;
+}
+input::-webkit-input-placeholder{
+  color:#fff;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+  color:#fff;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+  color:#fff;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+  color:#fff;
 }
