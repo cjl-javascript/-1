@@ -8,15 +8,13 @@ var key360 = "";
 var cutParms = "";
 var msg = "";
 //验证码默认关闭
-var yzm = "f";
+var yzm = "t";
 //倒计时--验证码
 var wait = 60;
 //按钮等待
 var btnwait = 2;
 //注册类型 默认日语
 var pType = 2;
-
-
 
 $(function () {
     ID = GetParms("ID");
@@ -29,7 +27,7 @@ $(function () {
 
 
     //显示验证码
-    // yzm = GetParms("vc");
+    //yzm = GetParms("vc");
     // if (yzm != "t") {
     //     $(".yzm").hide();
     // }
@@ -75,12 +73,13 @@ $(function () {
                 } else {
 
                     setCookie("salt", data, 1, '', '', '');
+                    
                 }
             }
         })
 
     })
-
+    
 
 
     $("#btnsubmit").click(function () {
@@ -103,21 +102,27 @@ $(function () {
     })
 
     $("#btnsubmitYZM").click(function () {
-        console.log()
+        
         btnwaittime(this);
-        if (yzm == "t") {
+         
             var code = $.trim($("#YZMcode").val());
             var codeVal = getCookie("salt");
+            
             if (code == "") {
                 alert('请输入验证码！');
+                
                 return false;
             }
             if (code != codeVal) {
                 alert('您输入的验证码不正确！');
                 return false;
+            }else{
+                return Register("Orders_Name", "Orders_Tel");
             }
-        }
-        return Register("Orders_Name", "Orders_Tel");
+        
+        
+        
+        
     })
 
 
@@ -228,7 +233,7 @@ function AjaxRegister(name, mobile, email, seladdr, ID, adname, act, calladdr, k
         },
         success: function (data) {
 
-            console.log(data);
+            
             if (data == "1") {
 
                 alert("注册成功");
@@ -314,29 +319,41 @@ function getCookie(name) {
 }
 
 function setCookie(name, value, expires, path, domain, secure) {
+
+    
+
     var today = new Date();
     today.setTime(today.getTime());
     if (expires) {
         expires = expires * 1000 * 60 * 60 * 24;
     }
     var expires_date = new Date(today.getTime() + (expires));
+    
     document.cookie = name + '=' + escape(value) +
         ((expires) ? ';expires=' + expires_date.toGMTString() : '') + //expires.toGMTString()  
         ((path) ? ';path=' + path : '') +
         ((domain) ? ';domain=' + domain : '') +
         ((secure) ? ';secure' : '');
+       
 }
 
 //不遮挡输入框
-function inputFocus(){
-    setTimeout(function(){  
-        window.scrollTo(0,document.body.clientHeight);  
-    }, 500); 
-}
-//跳转页面底部
-function goBottom() {
-    window.scrollTo(0, document.documentElement.scrollHeight-document.documentElement.clientHeight);
+
+    function inputFocus(){
+       console.log(2222)
+        setTimeout(function(){  
+            window.scrollTo(0,document.body.clientHeight);  
+        }, 500); 
     }
+    
+
+//跳转页面底部
+
+    function goBottom() {
+        window.scrollTo(0, document.documentElement.scrollHeight-document.documentElement.clientHeight);
+        }
+
+
 
 
 
