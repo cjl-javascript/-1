@@ -38,10 +38,8 @@ $(function () {
         if (mobileOnly(mobile) == false) {
             alert('请输入正确的手机号!');
             return;
-        }else {
-            time(this)
-        }
-        
+        }else{
+            time(this);
         $.ajax({
             url: "https://www.sakurajp.com.cn/api/XsjSendMsg.ashx?mobile=" + mobile,
             type: "get",
@@ -55,6 +53,8 @@ $(function () {
                 }
             }
         })
+        }
+        
 
     })
 
@@ -63,10 +63,8 @@ $(function () {
         if (mobileOnly(mobile) == false) {
             alert('请输入正确的手机号!');
             return;
-        }else{
-            time(this);
         }
-        
+        time(this);
         $.ajax({
             url: "https://www.sakurajp.com.cn/api/XsjSendMsg.ashx?mobile=" + mobile,
             type: "get",
@@ -77,13 +75,13 @@ $(function () {
                 } else {
 
                     setCookie("salt", data, 1, '', '', '');
-                    
+
                 }
             }
         })
 
     })
-    
+
 
 
     $("#btnsubmit").click(function () {
@@ -106,27 +104,27 @@ $(function () {
     })
 
     $("#btnsubmitYZM").click(function () {
-        
+
         btnwaittime(this);
-         
-            var code = $.trim($("#YZMcode").val());
-            var codeVal = getCookie("salt");
-            
-            if (code == "") {
-                alert('请输入验证码！');
-                
-                return false;
-            }
-            if (code != codeVal) {
-                alert('您输入的验证码不正确！');
-                return false;
-            }else{
-                return Register("Orders_Name", "Orders_Tel");
-            }
-        
-        
-        
-        
+
+        var code = $.trim($("#YZMcode").val());
+        var codeVal = getCookie("salt");
+
+        if (code == "") {
+            alert('请输入验证码！');
+
+            return false;
+        }
+        if (code != codeVal) {
+            alert('您输入的验证码不正确！');
+            return false;
+        } else {
+            return Register("Orders_Name", "Orders_Tel");
+        }
+
+
+
+
     })
 
 
@@ -237,11 +235,11 @@ function AjaxRegister(name, mobile, email, seladdr, ID, adname, act, calladdr, k
         },
         success: function (data) {
 
-            
+
             if (data == "1") {
 
                 alert("注册成功");
-                
+
             } else if (data == "2") {
                 alert("对不起,该手机号已存在!");
 
@@ -271,9 +269,9 @@ function CutParms() {
 // 手机号码验证
 var mobileOnly = function (str) {
     var regMobile = /^0{0,1}(13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9])[0-9]{8}$/;
-    var regMobile2=/^147[0-9]{8}$/;
-    if(regMobile2.test(str)){
-        return false;
+    var regMobile2 = /^147[0-9]{8}$/;
+    if (regMobile2.test(str)) {
+        return alert("请重新输入手机号");
     }
     if (regMobile.test(str)) {
         return true;
@@ -324,7 +322,7 @@ function getCookie(name) {
 
 function setCookie(name, value, expires, path, domain, secure) {
 
-    
+
 
     var today = new Date();
     today.setTime(today.getTime());
@@ -332,28 +330,30 @@ function setCookie(name, value, expires, path, domain, secure) {
         expires = expires * 1000 * 60 * 60 * 24;
     }
     var expires_date = new Date(today.getTime() + (expires));
-    
+
     document.cookie = name + '=' + escape(value) +
         ((expires) ? ';expires=' + expires_date.toGMTString() : '') + //expires.toGMTString()  
         ((path) ? ';path=' + path : '') +
         ((domain) ? ';domain=' + domain : '') +
         ((secure) ? ';secure' : '');
-       
+
 }
 
 //不遮挡输入框
 
-    function inputFocus(){
-        setTimeout(function(){  
-            window.scrollTo(0,document.body.clientHeight);  
-        }, 500); 
-    }
+function inputFocus() {
+    console.log(2222)
+    setTimeout(function () {
+        window.scrollTo(0, document.body.clientHeight);
+    }, 500);
+}
+
 
 //跳转页面底部
 
-    function goBottom() {
-        window.scrollTo(0, document.documentElement.scrollHeight-document.documentElement.clientHeight);
-        }
+function goBottom() {
+    window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement.clientHeight);
+}
 
 
 
